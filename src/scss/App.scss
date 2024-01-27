@@ -1,4 +1,4 @@
-@import 'core/reset.scss';
+@import "core/reset.scss";
 
 .container {
   background-color: #302c42;
@@ -6,7 +6,7 @@
   padding: 20px;
 }
 
-.header{
+.header {
   height: 15%;
   width: 100%;
 }
@@ -15,49 +15,49 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  &__icon{
+  &__icon {
     color: white;
     font-size: 20px;
   }
-  &__title{
+  &__title {
     color: rgba(255, 255, 255, 0.5);
     font-size: 14px;
     display: flex;
     align-items: center;
     gap: 7px;
   }
-  &__logo{
+  &__logo {
     height: 46px;
     width: 126px;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       height: 43px;
       width: 115px;
     }
   }
 }
 
-.hero{
+.hero {
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 20px;
-  &__title{
+  &__title {
     font-size: 20px;
     font-weight: bold;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       font-size: 40px;
     }
   }
-  &__text{
+  &__text {
     font-size: 12px;
     text-align: center;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       font-size: 18px;
     }
   }
-  &__btn{
+  &__btn {
     height: 20px;
     width: 116px;
     text-transform: uppercase;
@@ -67,7 +67,7 @@
     background-color: #8176af;
     border: none;
     border-radius: 10px;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       height: 30px;
       width: 150px;
       border-radius: 20px;
@@ -76,17 +76,17 @@
   }
 }
 
-.footer{
+.footer {
   height: 10%;
   display: flex;
   justify-content: center;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     height: 60px;
   }
-  &__logo{
+  &__logo {
     height: 46px;
     width: 126px;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       height: 43px;
       width: 115px;
     }
@@ -98,7 +98,7 @@
   flex-direction: column;
   padding-top: 50px;
   height: 75%;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 }
@@ -131,7 +131,7 @@
 
 .main .preview {
   width: 100%;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 60%;
   }
 }
@@ -139,7 +139,7 @@
 .main .form {
   background-color: #302c42;
   width: 100%;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 40%;
   }
 }
@@ -193,87 +193,87 @@
   border: solid 2px white;
 }
 
-.main .preview {
-  padding: 20px;
+.main {
+  &__preview {
+    padding: 20px;
+    &--image {
+      object-fit: cover;
+      width: 100%;
+      height: 80%;
+      width: 60%;
+    }
+    &--autor {
+      background-color: white;
+      color: #3e3e3e;
+      width: 90%;
+      height: 30%;
+      transform: translateY(-100px);
+      margin: auto;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+      padding: 30px;
+      overflow-y: scroll;
+    }
+  }
 }
 
-.main .preview .image {
-  object-fit: cover;
-  width: 100%;
-  height: 80%;
-}
-
-.main .preview .autor {
-  background-color: white;
-  color: #3e3e3e;
-  width: 90%;
-  height: 50%;
-  transform: translateY(-100px);
-  margin: auto;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 40px;
-  padding: 30px;
-  overflow-y: scroll;
+.info-project {
+  width: 60%;
+  &__subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+  &__line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(1, 1, 1, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  &__title {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  &__slogan {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  &__desc {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  &__technologies {
+    background-color: lightgray;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px;
+    width: 70%;
+  }
 }
 
 .info-autor {
   width: 40%;
   text-align: center;
-}
-
-.info-autor .image {
-  border-radius: 50%;
-  width: 80px;
-  height: 110px;
-}
-
-.info-autor .job {
-  font-weight: bold;
-  color: black;
-  font-size: 14px;
-}
-
-.info-autor .name {
-  font-size: 16px;
-}
-
-.info-project {
-  width: 60%;
-}
-
-.info-project .subtitle {
-  font-size: 14px;
-  text-align: center;
-}
-.info-project .title {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.info-project .desc {
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.info-project .slogan {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.info-project .line {
-  width: 100%;
-  border: 0;
-  height: 1px;
-
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(1, 1, 1, 0.75),
-    rgba(255, 255, 255, 0)
-  );
+  &__image {
+    border-radius: 50%;
+    width: 80px;
+    height: 110px;
+  }
+  &__job {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+  }
+  &__name {
+    font-size: 16px;
+  }
 }
 
 .btn-color {
@@ -286,14 +286,6 @@
 .btn-color-dark {
   background-color: black;
   color: white;
-}
-
-.technologies {
-  background-color: lightgray;
-  border-radius: 20px;
-  font-size: 14px;
-  padding: 10px;
-  width: 70%;
 }
 
 .card {

@@ -24,31 +24,31 @@ function App() {
       </div>
     </header>
     <main className="main">
-      <section className="preview">
-        <img className="image" src={cover} alt="" />
+      <section className="main__preview">
+        <img className="main__preview--image" src={cover} alt="" />
 
-        <section className="autor">
+        <section className="main__preview--autor">
           <section className="info-project">
-            <p className="subtitle">Personal Project Card</p>
-            <hr className="line" />
+            <p className="info-project__subtitle">Personal Project Card</p>
+            <hr className="info-project__line" />
 
-            <h2 className="title">Elegant Workspace</h2>
-            <p className="slogan">Diseños Exclusivos</p>
-            <p className="desc">
+            <h2 className="info-project__title">Elegant Workspace</h2>
+            <p className="info-project__slogan">Diseños Exclusivos</p>
+            <p className="info-project__desc">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Libero, delectus? Voluptates at hic aliquam porro ad suscipit
               harum laboriosam saepe earum doloribus aperiam, ullam culpa
               accusantium placeat odit corrupti ipsum!
             </p>
-            <section className="technologies">
-              <p className="text">React JS, MongoDB</p>
+            <section className="info-project__technologies">
+              <p className="info-project__technologies--text">React JS, MongoDB</p>
             </section>
           </section>
 
           <section className="info-autor">
-            <img className="image" src={user} alt="" />
-            <p className="job">Full Stack Developer</p>
-            <p className="name">Emmelie Björklund</p>
+            <img className="info-autor__image" src={user} alt="" />
+            <p className="info-autor__job">Full Stack Developer</p>
+            <p className="info-autor__name">Emmelie Björklund</p>
           </section>
         </section>
       </section>
