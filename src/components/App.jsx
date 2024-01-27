@@ -12,7 +12,9 @@ function App() {
     <div className="container">
     <header className="header">
       <nav className="nav">
-        <span className="nav__title"><i className="fa-solid fa-laptop-code nav__icon"></i>Proyectos Molones</span>
+        <span className="nav__title">
+          <i className="fa-solid fa-laptop-code nav__icon"></i>Proyectos Molones
+          </span>
         <img className="nav__logo" src={logoAlab} alt="logo Adalab" />
       </nav>
       <div className="hero">

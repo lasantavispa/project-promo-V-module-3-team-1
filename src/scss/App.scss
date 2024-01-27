@@ -2,16 +2,19 @@
 
 .container {
   background-color: #302c42;
-  height: 100vh;
+  height: 100%;
   padding: 20px;
 }
 
+.header{
+  height: 15%;
+  width: 100%;
+}
 .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
   &__icon{
     color: white;
     font-size: 20px;
@@ -19,6 +22,9 @@
   &__title{
     color: rgba(255, 255, 255, 0.5);
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
   }
   &__logo{
     height: 46px;
@@ -36,12 +42,20 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  padding: 20px;
   &__title{
     font-size: 20px;
     font-weight: bold;
+    @media (min-width: 768px){
+      font-size: 40px;
+    }
   }
   &__text{
     font-size: 12px;
+    text-align: center;
+    @media (min-width: 768px){
+      font-size: 18px;
+    }
   }
   &__btn{
     height: 20px;
@@ -51,19 +65,27 @@
     font-weight: bold;
     color: white;
     background-color: #8176af;
+    border: none;
     border-radius: 10px;
+    @media (min-width: 768px){
+      height: 30px;
+      width: 150px;
+      border-radius: 20px;
+      font-size: 15px;
+    }
   }
 }
 
 .footer{
-  height: 10vh;
+  height: 10%;
+  display: flex;
+  justify-content: center;
   @media (min-width: 768px){
     height: 60px;
   }
   &__logo{
     height: 46px;
     width: 126px;
-    margin: 10px auto;
     @media (min-width: 768px){
       height: 43px;
       width: 115px;
@@ -73,8 +95,12 @@
 
 .main {
   display: flex;
+  flex-direction: column;
   padding-top: 50px;
-  height: 80vh;
+  height: 75%;
+  @media (min-width: 768px){
+    flex-direction: row;
+  }
 }
 .main .title {
   color: #ffffff;
@@ -104,12 +130,18 @@
 }
 
 .main .preview {
-  width: 60%;
+  width: 100%;
+  @media (min-width: 768px){
+    width: 60%;
+  }
 }
 
 .main .form {
   background-color: #302c42;
-  width: 40%;
+  width: 100%;
+  @media (min-width: 768px){
+    width: 40%;
+  }
 }
 
 .main .project,
