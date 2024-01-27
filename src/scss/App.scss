@@ -1,10 +1,4 @@
 @import 'core/reset.scss';
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
 
 .container {
   background-color: #302c42;
@@ -12,14 +6,69 @@
   padding: 20px;
 }
 
-.header {
+.nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  &__icon{
+    color: white;
+    font-size: 20px;
+  }
+  &__title{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+  }
+  &__logo{
+    height: 46px;
+    width: 126px;
+    @media (min-width: 768px){
+      height: 43px;
+      width: 115px;
+    }
+  }
 }
 
-.header .text {
+.hero{
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  &__title{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &__text{
+    font-size: 12px;
+  }
+  &__btn{
+    height: 20px;
+    width: 116px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #8176af;
+    border-radius: 10px;
+  }
+}
+
+.footer{
+  height: 10vh;
+  @media (min-width: 768px){
+    height: 60px;
+  }
+  &__logo{
+    height: 46px;
+    width: 126px;
+    margin: 10px auto;
+    @media (min-width: 768px){
+      height: 43px;
+      width: 115px;
+    }
+  }
 }
 
 .main {

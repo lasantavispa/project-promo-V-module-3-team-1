@@ -11,7 +11,15 @@ function App() {
   return  (
     <div className="container">
     <header className="header">
-      <p className="text">Proyectos Molones</p>
+      <nav className="nav">
+        <span className="nav__title"><i className="fa-solid fa-laptop-code nav__icon"></i>Proyectos Molones</span>
+        <img className="nav__logo" src={logoAlab} alt="logo Adalab" />
+      </nav>
+      <div className="hero">
+        <h1 className="hero__title">Proyectos Molones</h1>
+        <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología.</p>
+        <button className="hero__btn">ver proyectos</button>
+      </div>
     </header>
     <main className="main">
       <section className="preview">
@@ -134,6 +142,9 @@ function App() {
         </section>
       </section>
     </main>
+    <footer className="footer">
+      <img className="footer__logo" src={logoAlab} alt="logo Adalab" />
+    </footer>
   </div>
   )
 
