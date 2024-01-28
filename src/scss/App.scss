@@ -1,4 +1,5 @@
 @import "core/reset.scss";
+@import "core/variables.scss";
 
 .container {
   background-color: #302c42;
@@ -141,6 +142,19 @@
   width: 100%;
   @media (min-width: 768px) {
     width: 40%;
+  }
+}
+
+.form {
+  &__title {
+    color: $ultraWhite;
+    font-family: $montse;
+    font-weight: bold;
+    font-size: 40px;
+    gap: 6px;
+
+
+
   }
 }
 

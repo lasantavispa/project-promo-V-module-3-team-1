@@ -54,7 +54,7 @@ function App() {
       </section>
 
       <section className="form">
-        <h2 className="title">Información</h2>
+        <h2 className="form__title">Información</h2>
 
         <section className="ask-info">
           <p className="subtitle">Cuéntanos sobre el proyecto</p>
