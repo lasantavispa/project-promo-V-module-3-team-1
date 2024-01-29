@@ -59,7 +59,7 @@ function App() {
         <section className="preview">
           <img className="preview__image" src={cover} alt="" />
 
-          <section className="preview__autor">
+          <section className="preview__author">
             <section className="project">
               <p className="project__subtitle">Personal Project Card</p>
               <hr className="project__line" />
