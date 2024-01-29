@@ -1,8 +1,8 @@
-@import "core/reset.scss";
-@import "core/variables.scss";
+@import 'core/reset.scss';
+@import 'core/variables.scss';
 
 .container {
-  background-color: #302c42;
+  background-color: $dark;
   height: 100%;
   padding: 20px;
 }
@@ -53,6 +53,7 @@
   }
   &__text {
     font-size: 12px;
+    font-weight: 300;
     text-align: center;
     @media (min-width: 768px) {
       font-size: 18px;
@@ -62,10 +63,11 @@
     height: 20px;
     width: 116px;
     text-transform: uppercase;
+    font-family: $heroBtn;
     font-size: 10px;
     font-weight: bold;
-    color: white;
-    background-color: #8176af;
+    color: $white;
+    background-color: $darkLilac;
     border: none;
     border-radius: 10px;
     @media (min-width: 768px) {
@@ -103,31 +105,27 @@
     flex-direction: row;
   }
 }
-.main .title {
-  color: #ffffff;
-  text-align: center;
-}
 
-.main .ask-info {
+.askInfo {
   padding: 20px;
   text-align: center;
   color: white;
-}
 
-.main .ask-info .subtitle {
-  padding-bottom: 10px;
-}
+  &__subtitle {
+    padding-bottom: 10px;
+  }
 
-.main .ask-info .line {
-  width: 100%;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0)
-  );
+  &__line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
 }
 
 .main .preview {
@@ -137,24 +135,18 @@
   }
 }
 
-.main .form {
+.form {
+  display: flex;
+  flex-direction: column;
   background-color: #302c42;
   width: 100%;
+
+  &__h2 {
+    color: white;
+    text-align: center;
+  }
   @media (min-width: 768px) {
     width: 40%;
-  }
-}
-
-.form {
-  &__title {
-    color: $ultraWhite;
-    font-family: $montse;
-    font-weight: bold;
-    font-size: 40px;
-    gap: 6px;
-
-
-
   }
 }
 
@@ -164,47 +156,76 @@
   flex-direction: column;
   gap: 10px;
   border: none;
+
+  &__input {
+    background-color: #302c42;
+    border-color: white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: #ffffff;
+    padding-left: 15px;
+    padding-top: 5px;
+
+    ::placeholder {
+      color: white;
+    }
+  }
+
+  &__textarea {
+    background-color: #302c42;
+    border-color: white;
+    border-radius: 25px;
+    height: 42.72px;
+    color: #ffffff;
+    padding-left: 15px;
+    padding-top: 5px;
+    height: 110px;
+
+    ::placeholder {
+      color: white;
+    }
+  }
 }
 
-.input,
-.textarea {
-  background-color: #302c42;
-  border-color: white;
-  border-radius: 40px;
-  height: 42.72px;
-  color: #ffffff;
-  padding-left: 15px;
-  padding-top: 5px;
-}
-.input::placeholder,
-.textarea::placeholder {
-  color: #ffffff;
-}
-.textarea {
-  height: 110px;
-}
-
-.buttons-img {
+.buttonImg {
+  display: flex;
+  flex-direction: row;
   text-align: center;
+  justify-content: center;
+  gap: 45px;
+
+  &__btn {
+    width: 160px;
+    margin-top: 10px;
+    color: white;
+    border: none;
+
+    height: 43px;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+  }
 }
 
-.btn,
-.btn-large {
-  width: 160px;
-  margin-top: 10px;
-  color: white;
+.buttonImgCrear {
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  border: none;
+  justify-content: center;
 
-  height: 43px;
-  background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
-  border-radius: 40px;
+  &__large {
+    width: 200px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+
+    height: 43px;
+    background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+    border-radius: 40px;
+    border: solid 2px white;
+  }
 }
 
-.btn-large {
-  width: 200px;
-  border: solid 2px white;
-}
 
 //.main {
 .preview {
