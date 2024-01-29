@@ -1,7 +1,8 @@
-@import "core/reset.scss";
+@import 'core/reset.scss';
+@import 'core/variables.scss';
 
 .container {
-  background-color: #302c42;
+  background-color: $dark;
   height: 100%;
   padding: 20px;
 }
@@ -15,11 +16,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  &__icon {
+  &__icon{
     color: white;
     font-size: 20px;
   }
-  &__title {
+  &__title{
     color: rgba(255, 255, 255, 0.5);
     font-size: 14px;
     display: flex;
@@ -36,24 +37,25 @@
   }
 }
 
-.hero {
+.hero{
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 20px;
-  &__title {
+  &__title{
     font-size: 20px;
     font-weight: bold;
-    @media (min-width: 768px) {
+    @media (min-width: 768px){
       font-size: 40px;
     }
   }
-  &__text {
+  &__text{
     font-size: 12px;
+    font-weight: 300;
     text-align: center;
-    @media (min-width: 768px) {
+    @media (min-width: 768px){
       font-size: 18px;
     }
   }
@@ -61,13 +63,14 @@
     height: 20px;
     width: 116px;
     text-transform: uppercase;
+    font-family: $heroBtn;
     font-size: 10px;
     font-weight: bold;
-    color: white;
-    background-color: #8176af;
+    color: $white;
+    background-color: $darkLilac;
     border: none;
     border-radius: 10px;
-    @media (min-width: 768px) {
+    @media (min-width: 768px){
       height: 30px;
       width: 150px;
       border-radius: 20px;
@@ -80,13 +83,13 @@
   height: 10%;
   display: flex;
   justify-content: center;
-  @media (min-width: 768px) {
+  @media (min-width: 768px){
     height: 60px;
   }
-  &__logo {
+  &__logo{
     height: 46px;
     width: 126px;
-    @media (min-width: 768px) {
+    @media (min-width: 768px){
       height: 43px;
       width: 115px;
     }
