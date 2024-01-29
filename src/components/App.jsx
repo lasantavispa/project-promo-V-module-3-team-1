@@ -57,20 +57,20 @@ function App() {
       </header>
       <main className="main">
         <section className="preview">
-          <img className="image" src={cover} alt="" />
+          <img className="preview__image" src={cover} alt="" />
 
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <section className="preview__autor">
+            <section className="project">
+              <p className="project__subtitle">Personal Project Card</p>
+              <hr className="project__line" />
 
-              <h2 className="title"> {project || 'Elegant Workspace'} </h2>
-              <p className="slogan"> {slogan || 'Diseños Exclusivos'} </p>
-              <p className="desc">
+              <h2 className="project__title"> {project || 'Elegant Workspace'} </h2>
+              <p className="project__slogan"> {slogan || 'Diseños Exclusivos'} </p>
+              <p className="project__desc">
                 {desc ||
                   'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
               </p>
-              <section className="technologies">
+              <section className="project__technologies">
                 <p className="text"> {tech || 'React JS, MongoDB'}</p>
               </section>
               <section>
@@ -80,10 +80,10 @@ function App() {
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="" />
-              <p className="job"> {job || 'Full Stack Developer'} </p>
-              <p className="name"> {author || 'Emmelie Björklund'} </p>
+            <section className="author">
+              <img className="author__image" src={user} alt="" />
+              <p className="author__job"> {job || 'Full Stack Developer'} </p>
+              <p className="author__name"> {author || 'Emmelie Björklund'} </p>
             </section>
           </section>
         </section>
