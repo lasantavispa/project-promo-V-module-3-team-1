@@ -24,10 +24,10 @@ function App() {
       </div>
     </header>
     <main className="main">
-      <section className="main__preview">
-        <img className="main__preview--image" src={cover} alt="" />
+      <section className="preview">
+        <img className="preview__image" src={cover} alt="" />
 
-        <section className="main__preview--autor">
+        <section className="preview__autor">
           <section className="info-project">
             <p className="info-project__subtitle">Personal Project Card</p>
             <hr className="info-project__line" />
