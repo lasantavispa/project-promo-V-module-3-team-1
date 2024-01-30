@@ -1,12 +1,11 @@
 import Preview from './Preview.jsx';
 import Form from './Form.jsx';
-function Main () {
+function Main (props) {
 return (
 
 <main className="main">
 <Preview/>
-<Form/>
-
+<Form function = {props.function}/>
 </main>
 )
 }

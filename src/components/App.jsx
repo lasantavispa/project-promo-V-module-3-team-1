@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Main />
+      <Main function = {handleInput} />
       <Footer/>
     </div>
   );

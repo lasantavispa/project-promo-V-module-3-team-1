@@ -1,4 +1,4 @@
-function Form () {
+function Form (props) {
     return (
         <section className="form">
   <h2 className="form__h2">Información</h2>
@@ -10,7 +10,7 @@ function Form () {
 
   <fieldset className="project">
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       placeholder="Nombre del proyecto"
@@ -18,7 +18,7 @@ function Form () {
       id="nameId"
     />
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       name="slogan"
@@ -26,7 +26,7 @@ function Form () {
       placeholder="Slogan"
     />
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       name="repo"
@@ -34,7 +34,7 @@ function Form () {
       placeholder="Repo"
     />
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       placeholder="Demo"
@@ -42,7 +42,7 @@ function Form () {
       id="demoId"
     />
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       placeholder="Tecnologías"
@@ -50,7 +50,7 @@ function Form () {
       id="techId"
     />
     <textarea
-      onChange={handleInput}
+      onChange={props.function}
       className=" project__textarea"
       type="text"
       placeholder="Descripción"
@@ -66,7 +66,7 @@ function Form () {
 
   <fieldset className="project">
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       placeholder="Nombre"
@@ -74,7 +74,7 @@ function Form () {
       id="authorId"
     />
     <input
-      onChange={handleInput}
+      onChange={props.function}
       className="project__input"
       type="text"
       placeholder="Trabajo"
