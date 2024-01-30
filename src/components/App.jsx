@@ -4,6 +4,7 @@ import favicon from "../images/favicon.png";
 import logoAlab from "../images/logo-adalab.png";
 import Header from "./Header.jsx";
 import Main from "./Main.jsx";
+import Footer from "./Footer.jsx";
 import { useState } from "react";
 
 function App() {
@@ -41,9 +42,7 @@ function App() {
     <div className="container">
       <Header />
       <Main />
-      <footer className="footer">
-        <img className="footer__logo" src={logoAlab} alt="logo Adalab" />
-      </footer>
+      <Footer/>
     </div>
   );
 }
