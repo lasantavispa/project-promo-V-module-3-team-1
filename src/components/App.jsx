@@ -17,6 +17,11 @@ function App() {
   const [author, setAuthor] = useState("");
   const [job, setJob] = useState("");
 
+  const [avatar, setAvatar] = useState('');
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+  }
+
   const handleInput = (event) => {
     let inputValue = event.target.value;
     console.log(inputValue);
@@ -38,11 +43,15 @@ function App() {
       setJob(inputValue);
     }
   };
+
+  ;
+
   return (
     <div className="container">
       <Header />
-      <Main function = {handleInput} />
+      <Main function = {handleInput} avatar={avatar} updateAvatar={updateAvatar}/>
       <Footer/>
+      
     </div>
   );
 }

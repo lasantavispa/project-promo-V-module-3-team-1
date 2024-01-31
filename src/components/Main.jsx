@@ -5,7 +5,7 @@ return (
 
 <main className="main">
 <Preview/>
-<Form function = {props.function}/>
+<Form function = {props.function}  avatar={props.avatar} updateAvatar={props.updateAvatar}/>
 </main>
 )
 }

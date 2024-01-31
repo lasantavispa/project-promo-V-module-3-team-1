@@ -34,6 +34,8 @@ function Preview () {
     </section>
   </section>
 </section>
+
+
     )
 }
 export default Preview;

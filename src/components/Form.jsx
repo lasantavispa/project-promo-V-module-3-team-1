@@ -84,7 +84,7 @@ function Form (props) {
   </fieldset>
 
   <section className="buttonImg">
-    <button className="buttonImg__btn">Subir foto de proyecto</button>
+    <GetAvatar avatar={props.avatar} updateAvatar={props.updateAvatar} text='Subir foto de proyecto' />
     <button className="buttonImg__btn">Subir foto de autora</button>
   </section>
 
