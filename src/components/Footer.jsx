@@ -1,4 +1,6 @@
 import logoAlab from "../images/logo-adalab.png";
+import '../scss/core/Variables.scss';
+import '../scss/layout/Footer.scss';
 
 function Footer () {
     return (

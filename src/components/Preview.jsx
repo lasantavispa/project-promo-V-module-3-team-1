@@ -1,7 +1,7 @@
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 
-function Preview () {
+function Preview ({project, slogan, repo, demo, tech, desc, author, job}) {
     return (
 <section className="preview">
   <img className="image" src={cover} alt="" />
@@ -21,8 +21,8 @@ function Preview () {
         <p className="text"> {tech || 'React JS, MongoDB'}</p>
       </section>
       <section>
-        <a href="{repo}" target='_blank'> <i className="fa-brands fa-github"></i></a>
-        <a href="{demo}" target='_blank'><i className="fa-solid fa-globe"></i></a>
+        <a href={repo} target='_blank'> <i className="fa-brands fa-github"></i></a>
+        <a href={demo} target='_blank'><i className="fa-solid fa-globe"></i></a>
         
       </section>
     </section>

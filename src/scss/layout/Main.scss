@@ -1,0 +1,11 @@
+@import "../core/Variables.scss";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    height: 75%;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }

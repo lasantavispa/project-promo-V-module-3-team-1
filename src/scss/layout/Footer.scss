@@ -1,0 +1,18 @@
+@import "../core/Variables.scss";
+
+.footer {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    &__logo {
+      height: 46px;
+      width: 126px;
+    }
+    @media (min-width: 768px) {
+      height: 60px;
+      &__logo {
+        height: 43px;
+        width: 115px;
+      }
+    }
+  }
