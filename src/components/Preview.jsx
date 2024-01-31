@@ -4,9 +4,9 @@ import user from "../images/user.jpeg";
 function Preview ({project, slogan, repo, demo, tech, desc, author, job}) {
     return (
 <section className="preview">
-  <img className="image" src={cover} alt="" />
+  <img className="preview__image" src={cover} alt="" />
 
-  <section className="autor">
+  <section className="preview__author">
     <section className="info-project">
       <p className="subtitle">Personal Project Card</p>
       <hr className="line" />
@@ -27,10 +27,10 @@ function Preview ({project, slogan, repo, demo, tech, desc, author, job}) {
       </section>
     </section>
 
-    <section className="info-autor">
-      <img className="image" src={user} alt="" />
-      <p className="job"> {job || 'Full Stack Developer'} </p>
-      <p className="name"> {author || 'Emmelie Björklund'} </p>
+    <section className="author">
+      <img className="author__image" src={user} alt="" />
+      <p className="author__job"> {job || 'Full Stack Developer'} </p>
+      <p className="author__name"> {author || 'Emmelie Björklund'} </p>
     </section>
   </section>
 </section>
