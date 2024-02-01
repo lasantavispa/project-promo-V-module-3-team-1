@@ -59,8 +59,8 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
   };
 
   return (
-    <div className="get-avatar buttonImg__btn">
-      <label className="get-avatar__label">
+    <div className="buttonImg__btn">
+      <label >
         {text}
         <input
           type="file"

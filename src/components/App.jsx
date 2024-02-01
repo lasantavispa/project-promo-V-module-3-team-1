@@ -8,14 +8,25 @@ import Footer from './Footer.jsx';
 import { useState } from 'react';
 
 function App() {
-  const [project, setName] = useState('');
-  const [slogan, setSlogan] = useState('');
-  const [repo, setRepo] = useState('');
-  const [demo, setDemo] = useState('');
-  const [tech, setTech] = useState('');
-  const [desc, setDesc] = useState('');
-  const [author, setAuthor] = useState('');
-  const [job, setJob] = useState('');
+  const [formData, setFormData] = useState({
+    project: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+    tech: '',
+    desc: '',
+    author: '',
+    job: '',
+  });
+
+  // const [project, setName] = useState('');
+  // const [slogan, setSlogan] = useState('');
+  // const [repo, setRepo] = useState('');
+  // const [demo, setDemo] = useState('');
+  // const [tech, setTech] = useState('');
+  // const [desc, setDesc] = useState('');
+  // const [author, setAuthor] = useState('');
+  // const [job, setJob] = useState('');
 
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
@@ -23,42 +34,49 @@ function App() {
   };
 
   const handleInput = (event) => {
-    let inputValue = event.target.value;
-    console.log(inputValue);
     if (event.target.id === 'nameId') {
-      setName(inputValue);
+      formData.project = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'sloganId') {
-      setSlogan(inputValue);
+      formData.slogan = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'repoId') {
-      setRepo(inputValue);
+      formData.repo = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'demoId') {
-      setDemo(inputValue);
+      formData.demo = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'techId') {
-      setTech(inputValue);
+      formData.tech = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'descId') {
-      setDesc(inputValue);
+      formData.desc = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'authorId') {
-      setAuthor(inputValue);
+      formData.author = event.target.value;
+      setFormData({ ...formData });
     } else if (event.target.id === 'jobId') {
-      setJob(inputValue);
+      formData.job = event.target.value;
+      setFormData({ ...formData });
     }
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <Header />
       <Main
         handleInput={handleInput}
         avatar={avatar}
         updateAvatar={updateAvatar}
-        project={project}
-        slogan={slogan}
-        repo={repo}
-        demo={demo}
-        tech={tech}
-        desc={desc}
-        author={author}
-        job={job}
+        formData={formData}
+        // project={project}
+        // slogan={slogan}
+        // repo={repo}
+        // demo={demo}
+        // tech={tech}
+        // desc={desc}
+        // author={author}
+        // job={job}
       />
       <Footer />
     </div>

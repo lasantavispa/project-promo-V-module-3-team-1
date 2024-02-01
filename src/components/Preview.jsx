@@ -1,7 +1,7 @@
 import cover from '../images/cover.jpeg';
 import user from '../images/user.jpeg';
 
-function Preview({ project, slogan, repo, demo, tech, desc, author, job }) {
+function Preview({ formData }) {
   return (
     <section className='preview'>
       <img className='preview__image' src={cover} alt='' />
@@ -11,21 +11,21 @@ function Preview({ project, slogan, repo, demo, tech, desc, author, job }) {
           <p className='subtitle'>Personal Project Card</p>
           <hr className='line' />
 
-          <h2 className='title'> {project || 'Elegant Workspace'} </h2>
-          <p className='slogan'> {slogan || 'Diseños Exclusivos'} </p>
+          <h2 className='title'> {formData.project || 'Elegant Workspace'} </h2>
+          <p className='slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
           <p className='desc'>
-            {desc ||
+            {formData.desc ||
               'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
           </p>
           <section className='technologies'>
-            <p className='text'> {tech || 'React JS, MongoDB'}</p>
+            <p className='text'> {formData.tech || 'React JS, MongoDB'}</p>
           </section>
           <section>
-            <a href={repo} target='_blank'>
+            <a href={formData.repo} target='_blank'>
               {' '}
               <i className='fa-brands fa-github'></i>
             </a>
-            <a href={demo} target='_blank'>
+            <a href={formData.demo} target='_blank'>
               <i className='fa-solid fa-globe'></i>
             </a>
           </section>
@@ -33,8 +33,8 @@ function Preview({ project, slogan, repo, demo, tech, desc, author, job }) {
 
         <section className='author'>
           <img className='author__image' src={user} alt='' />
-          <p className='author__job'> {job || 'Full Stack Developer'} </p>
-          <p className='author__name'> {author || 'Emmelie Björklund'} </p>
+          <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
+          <p className='author__name'> {formData.author || 'Emmelie Björklund'} </p>
         </section>
       </section>
     </section>

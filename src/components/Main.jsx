@@ -8,31 +8,18 @@ function Main({
   handleInput,
   avatar,
   updateAvatar,
-  project,
-  slogan,
-  repo,
-  demo,
-  tech,
-  desc,
-  author,
-  job,
+  formData,
 }) {
   return (
     <main className='main'>
       <Preview
-        project={project}
-        slogan={slogan}
-        repo={repo}
-        demo={demo}
-        tech={tech}
-        desc={desc}
-        author={author}
-        job={job}
+        formData={formData}
       />
       <Form
         handleInput={handleInput}
         avatar={avatar}
         updateAvatar={updateAvatar}
+        formData={formData}
       />
     </main>
   );
