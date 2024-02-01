@@ -1,4 +1,5 @@
 import GetAvatar from './GetAvatar.jsx'
+import '../scss/layout/Form.scss';
 
 function Form({ handleInput, avatar, updateAvatar }) {
   return (
