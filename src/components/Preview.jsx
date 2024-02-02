@@ -9,7 +9,7 @@ function Preview({ formData }) {
 
       <section className='preview__author'>
         <section className='info-project'>
-          <p className='subtitle'>Personal Project Card</p>
+          <p className='info-project__subtitle'>Personal Project Card</p>
           <hr className='line' />
 
           <h2 className='title'> {formData.project || 'Elegant Workspace'} </h2>

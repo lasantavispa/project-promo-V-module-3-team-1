@@ -9,32 +9,82 @@
 
 .preview {
     padding: 20px;
-    &__image {
+     &__image {
       object-fit: cover;
       height: 100%;
       width: 100%;
     }
     &__author {
-      width: 90%;
+      width: 302px;
+      height: 214px;
       margin: 0 auto;
       background-color: $white;
       color: #3e3e3e;
       border-radius: 20px;
-      transform: translateY(-100px);
       display: flex;
       flex-direction: row-reverse;
       gap: 40px;
       padding: 30px;
+      transform: translateY(-30px);
+      
     }
     @media (min-width: 768px) {
       width: 60%;
       &__author {
         transform: translateY(-100px) translateX(104px);
+       
       }
     }
   }
-  
-  .author {
+
+  .desc {
+    color: $greyishBrown88;
+    font-family: $card;
+    font-size: 8px;
+    line-height: 14.1px;
+  }
+  .title{
+    color: $black;
+    font-family: $card;
+    font-size: 14px;
+  }
+  .slogan{
+    color: $greyishBrownTwo;
+    font-family: $card;
+    font-size: 12px;
+  }
+  .text{
+    font-size: 10px;
+    color: $greyishBrown;
+    font-family: $author;
+  }
+  @media (min-width: 768px) {
+  .desc {
+    color: $greyishBrown88;
+    font-family: $card;
+    font-size: 12px;
+  }
+
+  .title {
+  color: $black;
+  font-family: $card;
+  font-size: 24px;
+  }
+
+  .slogan{
+    color: $greyishBrownTwo;
+    font-family: $card;
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 12px;
+    color: $greyishBrown;
+    font-family: $author;
+  }
+}
+
+   .author {
     width: 40%;
     text-align: center;
     &__image {
@@ -42,14 +92,18 @@
       width: 80%;
     }
     &__job {
-      font-weight: bold;
-      color: $black;
-      font-size: 14px;
+      color: $warmGrey;
+      font-family: $author;
+      font-size: 12px;
     }
     &__name {
-      font-size: 16px;
+      font-size: 18px;
+      color: $black;
+      font-family: $author;
     }
   }
+
+
   
   .btn-color {
     border-radius: 20px;
