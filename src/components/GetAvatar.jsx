@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/defaultAvatar.png';
+import defaultAvatar from '../images/cover.jpeg';
 import '../scss/layout/GetAvatar.scss';
 
 function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {

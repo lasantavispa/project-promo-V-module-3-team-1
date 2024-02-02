@@ -1,10 +1,13 @@
 import cover from '../images/cover.jpeg';
 import user from '../images/user.jpeg';
+import PropTypes from 'prop-types';
 
-function Preview({ formData }) {
+function Preview({ formData, avatar, userPhoto }) {
+  // si avatar == '' me devuelves cover si no me devuelves avatar
+  console.log('Avatar in Preview:', avatar);
   return (
     <section className='preview'>
-      <img className='preview__image' src={cover} alt='' />
+      <img className='preview__image' src={avatar} alt='' />
 
       <section className='preview__author'>
         <section className='info-project'>
@@ -32,7 +35,7 @@ function Preview({ formData }) {
         </section>
 
         <section className='author'>
-          <img className='author__image' src={user} alt='' />
+          <img className='author__image' src={userPhoto} alt='' />
           <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
           <p className='author__name'> {formData.author || 'Emmelie Björklund'} </p>
         </section>
@@ -40,4 +43,9 @@ function Preview({ formData }) {
     </section>
   );
 }
+Preview.propTypes = {
+  formData: PropTypes.object.isRequired, // Ajusta el tipo según tus necesidades
+  avatar: PropTypes.string.isRequired, // Asegúrate de ajustar el tipo según tus necesidades
+  userPhoto: PropTypes.string.isRequired,
+};
 export default Preview;

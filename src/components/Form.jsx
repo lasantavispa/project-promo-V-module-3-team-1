@@ -1,7 +1,7 @@
 import GetAvatar from './GetAvatar.jsx';
 import '../scss/layout/Form.scss';
 
-function Form({ handleInput, avatar, updateAvatar, formData }) {
+function Form({ handleInput, avatar, updateAvatar, formData, userPhoto, updatePhoto }) {
   return (
     <section className="form">
       <h2 className="form__h2">Información</h2>
@@ -94,11 +94,16 @@ function Form({ handleInput, avatar, updateAvatar, formData }) {
 
       <section className="buttonImg">
         <GetAvatar
-          avatar={avatar}
+        //  avatar={avatar}
           updateAvatar={updateAvatar}
           text="Subir foto de proyecto"
         />
-        <button className="buttonImg__btn">Subir foto de autora</button>
+        <GetAvatar
+         // userPhoto={avatar}
+          updateAvatar={updatePhoto}
+          text="Subir foto de autora" 
+          />
+        {/* <button className="buttonImg__btn">Subir foto de autora</button> */}
       </section>
 
       <section className="buttonImgCrear">

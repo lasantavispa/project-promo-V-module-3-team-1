@@ -33,6 +33,11 @@ function App() {
     setAvatar(avatar);
   };
 
+  const [userPhoto, setUserPhoto] = useState('');
+  const updatePhoto = (userPhoto) => {
+    setUserPhoto(userPhoto);
+  }
+
   const handleInput = (event) => {
     if (event.target.id === 'nameId') {
       formData.project = event.target.value;
@@ -69,6 +74,8 @@ function App() {
         avatar={avatar}
         updateAvatar={updateAvatar}
         formData={formData}
+        userPhoto={userPhoto}
+        updatePhoto={updatePhoto}
         // project={project}
         // slogan={slogan}
         // repo={repo}
