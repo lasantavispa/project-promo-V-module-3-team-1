@@ -19,4 +19,10 @@
         width: 115px;
       }
     }
+    @media (min-width: 1200px) {
+      &__logo {
+        transform: translateX(20px);
+      }
+
+    }
 }
