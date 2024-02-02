@@ -1,11 +1,12 @@
 @import "../core/Variables.scss";
+@import "../core/Mixins.scss";
 
 .main {
-    display: flex;
-    flex-direction: column;
+  background-color: $dark;
     padding-top: 50px;
     height: fit-content;
     @media (min-width: 768px) {
+      display: flex;
       flex-direction: row;
     }
   }

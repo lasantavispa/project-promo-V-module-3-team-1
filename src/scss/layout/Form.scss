@@ -1,9 +1,8 @@
 @import "../core/Variables.scss";
+@import "../core/Mixins.scss";
 
 .form {
-    display: flex;
-    flex-direction: column;
-    background-color: $dark;
+    @include displayForm;
     width: 100%;
   
     &__h2 {
@@ -39,14 +38,13 @@
   
   .project,
   .author {
-    display: flex;
-    flex-direction: column;
+    @include displayForm;
     gap: 10px;
     border: none;
   
     &__input {
       background-color: $dark;
-      border-color: $white;
+      border: solid 2px $white;
       border-radius: 40px;
       height: 42.72px;
       color: $white;
@@ -62,6 +60,7 @@
       background-color: $dark;
       border-color: $white;
       border-radius: 25px;
+      border: solid 2px $white;
       height: 42.72px;
       color: $white;
       padding-left: 15px;
@@ -75,47 +74,27 @@
   }
   
   .buttonImg {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
+    @include buttonStyles;
     gap: 45px;
   
     &__btn {
       width: 160px;
-      margin-top: 10px;
-      color: $white;
-      border: none;
-  
-      height: 43px;
-      background: linear-gradient(90deg, $darkLilac -1.57%, #c0b7e8 98.43%);
-      border-radius: 40px;
+      @include commonButton;
     }
   }
   
   .buttonImgCrear {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-  
+    @include buttonStyles;
     &__large {
+      @include commonButton;
       width: 200px;
-      margin-top: 10px;
-      color: $white;
       text-align: center;
-      border: none;
-  
-      height: 43px;
-      background: linear-gradient(90deg, $darkLilac -1.57%, #c0b7e8 98.43%);
-      border-radius: 40px;
       border: solid 2px $white;
     }
   }
   
   
 .project {
-    // width: 60%;
     &__subtitle {
       font-size: 14px;
       text-align: center;
