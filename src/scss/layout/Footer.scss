@@ -2,19 +2,19 @@
 
 .footer {
   background-color: $dark;
-
   display: flex;
   justify-content: center;
-
-  &__logo {
-    height: 46px;
-    width: 126px;
-  }
+  padding: 20px;
   @media (min-width: 768px) {
     &__logo {
       height: 43px;
       width: 115px;
     }
   }
+  &__logo {
+    height: 46px;
+    width: 126px;
+  }
+ 
   
 }
