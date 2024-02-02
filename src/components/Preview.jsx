@@ -5,21 +5,20 @@ import '../scss/layout/Preview.scss';
 function Preview({ formData }) {
   return (
     <section className='preview'>
-      <img className='preview__image' src={cover} alt='' />
-
+      <img className='preview__image' src={cover} alt='' />      
       <section className='preview__author'>
-        <section className='info-project'>
-          <p className='info-project__subtitle'>Personal Project Card</p>
-          <hr className='line' />
+        <section className='project'>
+          <p className='project__subtitle'>Personal Project Card</p>
+          <hr className='project__line' />
 
-          <h2 className='title'> {formData.project || 'Elegant Workspace'} </h2>
-          <p className='slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
-          <p className='desc'>
+          <h2 className='project__title'> {formData.project || 'Elegant Workspace'} </h2>
+          <p className='project__slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
+          <p className='project__desc'>
             {formData.desc ||
               'Lorem, ipcorrupti ipsum!'}
           </p>
-          <section className='technologies'>
-            <p className='text'> {formData.tech || 'React JS, MongoDB'}</p>
+          <section className='project__technologies'>
+            <p className='project__text'> {formData.tech || 'React JS, MongoDB'}</p>
           </section>
           <section>
             <a href={formData.repo} target='_blank'>
