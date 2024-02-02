@@ -34,6 +34,12 @@
         transform: translateY(-100px) translateX(104px);
        
       }
+      @media (min-width: 1200px){
+        &__author{
+        width: 423px;
+        height: 282px;
+        } 
+      }
     }
   }
 
