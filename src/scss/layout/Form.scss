@@ -90,10 +90,6 @@
   
   
 .project {
-    &__subtitle {
-      font-size: 14px;
-      text-align: center;
-    }
     &__line {
       width: 100%;
       border: 0;
@@ -104,19 +100,6 @@
         rgba(1, 1, 1, 0.75),
         rgba(255, 255, 255, 0)
       );
-    }
-    &__title {
-      font-size: 20px;
-      color: $black;
-      margin-bottom: 10px;
-    }
-    &__slogan {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    &__desc {
-      font-size: 12px;
-      margin-bottom: 10px;
     }
     &__technologies {
       background-color: lightgray;
