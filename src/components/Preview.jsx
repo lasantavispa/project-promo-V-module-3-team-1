@@ -16,7 +16,7 @@ function Preview({ formData }) {
           <p className='slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
           <p className='desc'>
             {formData.desc ||
-              'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
+              'Lorem, ipcorrupti ipsum!'}
           </p>
           <section className='technologies'>
             <p className='text'> {formData.tech || 'React JS, MongoDB'}</p>

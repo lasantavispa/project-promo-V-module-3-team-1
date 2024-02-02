@@ -1,12 +1,5 @@
 @import "../core/Variables.scss";
 
-.container {
-    background-color: $dark;
-    height: 100%;
-    padding: 20px;
-  }
-
-
 .preview {
     padding: 20px;
      &__image {
@@ -25,24 +18,16 @@
       flex-direction: row-reverse;
       gap: 40px;
       padding: 30px;
-      transform: translateY(-30px);
-      
+         
     }
     @media (min-width: 768px) {
-      width: 60%;
-      &__author {
-        transform: translateY(-100px) translateX(104px);
-       
-      }
-      @media (min-width: 1200px){
-        &__author{
-        width: 423px;
-        height: 282px;
-        transform: translateY(-40px);
-        } 
-      }
+      width: 423px;
+      height: 282px;
+     
     }
-  }
+     
+    }
+ 
 
   .desc {
     color: $greyishBrown88;

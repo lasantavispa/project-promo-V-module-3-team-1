@@ -4,7 +4,7 @@
 .main {
     @include displayForm;
     padding-top: 50px;
-    height: 75%;
+    height: fit-content;
     @media (min-width: 768px) {
       flex-direction: row;
     }
