@@ -1,0 +1,74 @@
+@import "../core/Variables.scss";
+
+.container {
+    background-color: $dark;
+    height: 100%;
+    padding: 20px;
+  }
+
+
+.preview {
+    padding: 20px;
+    &__image {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    &__author {
+      width: 90%;
+      margin: 0 auto;
+      background-color: $white;
+      color: #3e3e3e;
+      border-radius: 20px;
+      transform: translateY(-100px);
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+      padding: 30px;
+    }
+    @media (min-width: 768px) {
+      width: 60%;
+      &__author {
+        transform: translateY(-100px) translateX(104px);
+      }
+    }
+  }
+  
+  .author {
+    width: 40%;
+    text-align: center;
+    &__image {
+      border-radius: 50%;
+      width: 80%;
+    }
+    &__job {
+      font-weight: bold;
+      color: $black;
+      font-size: 14px;
+    }
+    &__name {
+      font-size: 16px;
+    }
+  }
+  
+  .btn-color {
+    border-radius: 20px;
+    width: 85px;
+    height: 30px;
+    font-weight: bold;
+  }
+  
+  .btn-color-dark {
+    background-color: $black;
+    color: $white;
+  }
+  
+  .card {
+    color: $white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }

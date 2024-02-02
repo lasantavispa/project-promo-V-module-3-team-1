@@ -1,8 +1,8 @@
 @import "../core/Variables.scss";
+@import "../core/Mixins.scss";
 
 .main {
-    display: flex;
-    flex-direction: column;
+    @include displayForm;
     padding-top: 50px;
     height: 75%;
     @media (min-width: 768px) {
