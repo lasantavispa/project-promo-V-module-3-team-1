@@ -4,6 +4,7 @@
 .form {
     @include displayForm;
     width: 100%;
+    gap: 20px;
   
     &__h2 {
       color: $white;
@@ -15,14 +16,12 @@
   }
   
   .askInfo {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    color: $white;
-  
+    color: $white;  
     &__subtitle {
       padding-bottom: 10px;
-    }
-  
+    }  
     &__line {
       width: 100%;
       border: 0;
@@ -48,57 +47,49 @@
       border-radius: 40px;
       height: 42.72px;
       color: $white;
-      padding-left: 15px;
-      padding-top: 5px;
-  
-      ::placeholder {
-        color: $white;
-      }
+      padding-left: 15px;     
+      // ::placeholder {
+      //   color: $white;
+      // }
     }
   
     &__textarea {
       background-color: $dark;
       border-color: $white;
-      border-radius: 25px;
+      border-radius: 20px;
       border: solid 2px $white;
       height: 42.72px;
       color: $white;
       padding-left: 15px;
-      padding-top: 5px;
-      height: 110px;
-  
-      ::placeholder {
-        color: $white;
-      }
+      padding-top: 10px;
+      height: 110px;  
+      // ::placeholder {
+      //   color: $white;
+      // }
     }
   }
-  
+
   .buttonImg {
-    @include buttonStyles;
-    gap: 45px;
-  
-    &__btn {
-      width: 160px;
-      @include commonButton;
-    }
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   gap: 10px;
   }
   
   .buttonImgCrear {
     @include buttonStyles;
     &__large {
       @include commonButton;
-      width: 200px;
-      text-align: center;
-      border: solid 2px $white;
+      width: 200px;      
+      border: solid 2px $white; 
+      display: flex;
+      align-items: center; 
+      justify-content: center;
     }
   }
   
   
 .project {
-    &__subtitle {
-      font-size: 14px;
-      text-align: center;
-    }
     &__line {
       width: 100%;
       border: 0;
@@ -109,19 +100,6 @@
         rgba(1, 1, 1, 0.75),
         rgba(255, 255, 255, 0)
       );
-    }
-    &__title {
-      font-size: 20px;
-      color: $black;
-      margin-bottom: 10px;
-    }
-    &__slogan {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    &__desc {
-      font-size: 12px;
-      margin-bottom: 10px;
     }
     &__technologies {
       background-color: lightgray;

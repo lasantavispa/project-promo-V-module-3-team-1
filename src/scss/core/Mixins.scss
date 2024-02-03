@@ -4,6 +4,7 @@
     flex-direction: row;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 
 @mixin displayForm{
@@ -12,7 +13,9 @@
 }
 
 @mixin commonButton{
-    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
     color: $white;
     border: none;
     height: 43px;

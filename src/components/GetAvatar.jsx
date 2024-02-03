@@ -59,7 +59,7 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
   };
 
   return (
-    <div className="buttonImg__btn">
+    <div className="buttonImgCrear__large">
       <label >
         {text}
         <input

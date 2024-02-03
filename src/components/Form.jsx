@@ -1,17 +1,24 @@
 import GetAvatar from './GetAvatar.jsx';
 import '../scss/layout/Form.scss';
+import Card from './Card.jsx';
 
-function Form({ handleInput, avatar, updateAvatar, formData, userPhoto, updatePhoto }) {
+function Form({
+  handleInput,
+  avatar,
+  updateAvatar,
+  formData,
+  userPhoto,
+  updatePhoto,
+}) {
   return (
     <section className="form">
       <h2 className="form__h2">Información</h2>
 
-      <section className="askInfo">
-        <p className="askInfo__subtitle">Cuéntanos sobre el proyecto</p>
-        <hr className="askInfo__line" />
-      </section>
-
       <fieldset className="project">
+        <section className="askInfo">
+          <p className="askInfo__subtitle">Cuéntanos sobre el proyecto</p>
+          <hr className="askInfo__line" />
+        </section>
         <input
           value={formData.project}
           onChange={handleInput}
@@ -68,12 +75,12 @@ function Form({ handleInput, avatar, updateAvatar, formData, userPhoto, updatePh
         ></textarea>
       </fieldset>
 
-      <section className="askInfo">
-        <p className="askInfo__subtitle">Cuéntanos sobre la autora</p>
-        <hr className="askInfo__line" />
-      </section>
-
       <fieldset className="project">
+        <section className="askInfo">
+          <p className="askInfo__subtitle">Cuéntanos sobre la autora</p>
+          <hr className="askInfo__line" />
+        </section>
+
         <input
           onChange={handleInput}
           className="project__input"
@@ -94,16 +101,15 @@ function Form({ handleInput, avatar, updateAvatar, formData, userPhoto, updatePh
 
       <section className="buttonImg">
         <GetAvatar
-        //  avatar={avatar}
+          //  avatar={avatar}
           updateAvatar={updateAvatar}
           text="Subir foto de proyecto"
         />
         <GetAvatar
-         // userPhoto={avatar}
+          // userPhoto={avatar}
           updateAvatar={updatePhoto}
-          text="Subir foto de autora" 
-          />
-        {/* <button className="buttonImg__btn">Subir foto de autora</button> */}
+          text="Subir foto de autora"
+        />
       </section>
 
       <section className="buttonImgCrear">
@@ -115,12 +121,8 @@ function Form({ handleInput, avatar, updateAvatar, formData, userPhoto, updatePh
         </button>
       </section>
 
-      <section className="card">
-        <span className=""> La tarjeta ha sido creada: </span>
-        <a href="" className="" target="_blank" rel="noreferrer">
-          {' '}
-        </a>
-      </section>
+      <Card />
+      
     </section>
   );
 }
