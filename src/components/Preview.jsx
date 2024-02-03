@@ -1,6 +1,7 @@
 import cover from '../images/cover.jpeg';
 import user from '../images/user.jpeg';
 import PropTypes from 'prop-types';
+import "../scss/layout/Preview.scss";
 
 function Preview({ formData, avatar, userPhoto }) {
   // si avatar == '' me devuelves cover si no me devuelves avatar
