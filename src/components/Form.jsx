@@ -1,5 +1,6 @@
 import GetAvatar from './GetAvatar.jsx';
 import '../scss/layout/Form.scss';
+import Card from './Card.jsx';
 
 function Form({
   handleInput,
@@ -109,7 +110,6 @@ function Form({
           updateAvatar={updatePhoto}
           text="Subir foto de autora"
         />
-        {/* <button className="buttonImg__btn">Subir foto de autora</button> */}
       </section>
 
       <section className="buttonImgCrear">
@@ -121,12 +121,8 @@ function Form({
         </button>
       </section>
 
-      <section className="card">
-        <span className=""> La tarjeta ha sido creada: </span>
-        <a href="" className="" target="_blank" rel="noreferrer">
-          {' '}
-        </a>
-      </section>
+      <Card />
+      
     </section>
   );
 }

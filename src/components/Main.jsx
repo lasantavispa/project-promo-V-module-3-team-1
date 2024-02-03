@@ -16,7 +16,6 @@ function Main({  handleInput,  avatar,  updateAvatar,  formData, userPhoto, upda
       />
       <Form
         handleInput={handleInput}
-        //avatar={avatar}
         updateAvatar={updateAvatar}
         formData={formData}
         updatePhoto={updatePhoto}
