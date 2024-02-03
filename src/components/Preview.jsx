@@ -8,7 +8,7 @@ function Preview({ formData, avatar, userPhoto }) {
   console.log('Avatar in Preview:', avatar);
   return (
     <section className='preview'>
-      <img className='preview__image' src={avatar} alt='' />
+      <img className='preview__image' src={avatar || cover} alt='' />
 
       <section className='preview__author'>
         <section className='projectCard'>
@@ -36,7 +36,7 @@ function Preview({ formData, avatar, userPhoto }) {
         </section>
 
         <section className='author'>
-          <img className='author__image' src={userPhoto} alt='' />
+          <img className='author__image' src={userPhoto || user} alt='' />
           <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
           <p className='author__name'> {formData.author || 'Emmelie Björklund'} </p>
         </section>
