@@ -11,25 +11,25 @@ function Preview({ formData, avatar, userPhoto }) {
       <img className='preview__image' src={avatar} alt='' />
 
       <section className='preview__author'>
-        <section className='project'>
-          <p className='project__subtitle'>Personal Project Card</p>
-          <hr className='project__line' />
+        <section className='projectCard'>
+          <p className='projectCard__subtitle'>Personal Project Card</p>
+          <hr className='projectCard__line' />
 
-          <h2 className='project__title'> {formData.project || 'Elegant Workspace'} </h2>
-          <p className='project__slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
-          <p className='project__desc'>
+          <h2 className='projectCard__title'> {formData.project || 'Elegant Workspace'} </h2>
+          <p className='projectCard__slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
+          <p className='projectCard__desc'>
             {formData.desc ||
               'Lorem, ipcorrupti ipsum!'}
           </p>
-          <section className='project__technologies'>
-            <p className='project__text'> {formData.tech || 'React JS, MongoDB'}</p>
+          <section className='projectCard__technologies'>
+            <p className='projectCard__text'> {formData.tech || 'React JS - HTML -  CSS'}</p>
           </section>
-          <section>
+          <section className='projectCard__icons'>
             <a href={formData.repo} target='_blank'>
               {' '}
               <i className='fa-brands fa-github'></i>
             </a>
-            <a href={formData.demo} target='_blank'>
+            <a href={formData.demo} target='_blank'> 
               <i className='fa-solid fa-globe'></i>
             </a>
           </section>
