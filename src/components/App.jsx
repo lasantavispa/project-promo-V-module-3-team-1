@@ -12,86 +12,50 @@ import { useState } from "react";
 
 function App() {
   const [formData, setFormData] = useState({
-    project: "",
-    slogan: "",
-    repo: "",
-    demo: "",
-    tech: "",
-    desc: "",
-    author: "",
-    job: "",
+    name: '',
+    slogan: '',
+    technologies: '',
+    demo: '',
+    repo: '',
+    desc: '',
+    author: '',
+    job: '',
+    image: '',
+    photo: '',
   });
 
-  // const [project, setName] = useState('');
-  // const [slogan, setSlogan] = useState('');
-  // const [repo, setRepo] = useState('');
-  // const [demo, setDemo] = useState('');
-  // const [tech, setTech] = useState('');
-  // const [desc, setDesc] = useState('');
-  // const [author, setAuthor] = useState('');
-  // const [job, setJob] = useState('');
-
-  const [avatar, setAvatar] = useState("");
-  const updateAvatar = (avatar) => {
-    setAvatar(avatar);
-  };
-
-  const [userPhoto, setUserPhoto] = useState("");
-  const updatePhoto = (userPhoto) => {
-    setUserPhoto(userPhoto);
-  };
-
-  const handleInput = (event) => {
-    if (event.target.id === "nameId") {
-      formData.project = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "sloganId") {
-      formData.slogan = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "repoId") {
-      formData.repo = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "demoId") {
-      formData.demo = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "techId") {
-      formData.tech = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "descId") {
-      formData.desc = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "authorId") {
-      formData.author = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === "jobId") {
-      formData.job = event.target.value;
-      setFormData({ ...formData });
-    }
-  };
+const handleInput = (ev) => {
+  const inputValue = ev.target.value;
+  const inputName = ev.target.name;
+  setFormData({
+    ...formData,
+    [inputName] : inputValue
+  });
+  console.log(formData);
+}
 
   return (
 
     <div className="container">
-        <Header />
-        <Main
-          handleInput={handleInput}
-          avatar={avatar}
-          updateAvatar={updateAvatar}
-          formData={formData}
-          userPhoto={userPhoto}
-          updatePhoto={updatePhoto}
-          // project={project}
-          // slogan={slogan}
-          // repo={repo}
-          // demo={demo}
-          // tech={tech}
-          // desc={desc}
-          // author={author}
-          // job={job}
-        />
-        <Footer />
-      </div>
-
+      <Header />
+      <Main
+        handleInput={handleInput}
+        avatar={avatar}
+        updateAvatar={updateAvatar}
+        formData={formData}
+        userPhoto={userPhoto}
+        updatePhoto={updatePhoto}
+        // project={project}
+        // slogan={slogan}
+        // repo={repo}
+        // demo={demo}
+        // tech={tech}
+        // desc={desc}
+        // author={author}
+        // job={job}
+      />
+      <Footer />
+    </div>
   );
 }
 

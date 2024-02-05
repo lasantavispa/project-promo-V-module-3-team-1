@@ -1,14 +1,12 @@
 import GetAvatar from './GetAvatar.jsx';
 import '../scss/layout/Form.scss';
 import Card from './Card.jsx';
+import PropTypes from 'prop-types';
 
 function Form({
   handleInput,
-  avatar,
-  updateAvatar,
+  setFormData,
   formData,
-  userPhoto,
-  updatePhoto,
 }) {
   return (
     <section className="form">
@@ -20,7 +18,7 @@ function Form({
           <hr className="askInfo__line" />
         </section>
         <input
-          value={formData.project}
+          value={formData.name}
           onChange={handleInput}
           className="project__input"
           type="text"
@@ -56,7 +54,7 @@ function Form({
           id="demoId"
         />
         <input
-          value={formData.tech}
+          value={formData.technologies}
           onChange={handleInput}
           className="project__input"
           type="text"
@@ -100,15 +98,18 @@ function Form({
       </fieldset>
 
       <section className="buttonImg">
-        <GetAvatar
-          //  avatar={avatar}
-          updateAvatar={updateAvatar}
-          text="Subir foto de proyecto"
+        <GetAvatar  
+          setFormData = {setFormData}
+          text ="Subir foto de proyecto"
+          name = "image"
+          formData={formData}
+          
         />
-        <GetAvatar
-          // userPhoto={avatar}
-          updateAvatar={updatePhoto}
-          text="Subir foto de autora"
+        <GetAvatar     
+          setFormData = {setFormData}
+          text = "Subir foto de autora"
+          name = "photo"  
+          formData={formData}   
         />
       </section>
 
@@ -126,4 +127,9 @@ function Form({
     </section>
   );
 }
+
+Form.propTypes = {
+  formData: PropTypes.object.isRequired, 
+  handleInput: PropTypes.func.isRequired,
+};
 export default Form;

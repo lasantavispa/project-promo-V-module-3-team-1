@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/cover.jpeg';
-import '../scss/layout/GetAvatar.scss';
 
-function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
+function GetAvatar({ setFormData, text , name, formData }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -43,7 +41,7 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
     }
     // si la usuaria no ha elegido ningún fichero y ha puslado en cerrar la ventana de nuestro ordenador, no hago nada
   };
-
+  
   const getImage = () => {
     // cuando el navegador termina de manejar el fichero se ejecuta este método porque lo hemos indicado en  fr.addEventListener('load',  getImage);
 
@@ -52,10 +50,12 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
 
     //  fr.result contiene los datos del fichero en un formato que se llama base64 que nos vale por que podemos usarlo para pintar una imagen en HTML
     const image = fr.result;
+  
 
     // aquí hago lifting con los datos del fichero
     // lo que haga el componente madre con esta información es otro problema diferente
-    updateAvatar(image);
+    setFormData({...formData, [name]: image})
+    //llamar a SetFormdata en vez de handleInput
   };
 
   return (
@@ -63,25 +63,21 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
       <label >
         {text}
         <input
-          type="file"
-          ref={myFileField}
-          style={{ display: 'none' }}
-          onChange={uploadImage}
+          type = "file"
+          ref = {myFileField}
+          style = {{ display: 'none' }}
+          onChange = {uploadImage}
+          name = {name}
         />
       </label>
-
-      {/* <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div> */}
     </div>
   );
 }
 
 GetAvatar.propTypes = {
-  avatar: PropTypes.string,
-  updateAvatar: PropTypes.func.isRequired,
-  text: PropTypes.string
+  setFormData: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default GetAvatar;
