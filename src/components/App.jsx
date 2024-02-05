@@ -35,7 +35,8 @@ const handleInput = (ev) => {
     <div className="container">
       <Header />
       <Main
-        handleInput={handleInput}        
+        handleInput={handleInput}
+        setFormData={setFormData}        
         formData={formData}     
       />
       <Footer />

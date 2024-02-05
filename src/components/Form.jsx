@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 function Form({
   handleInput,
+  setFormData,
   formData,
 }) {
   return (
@@ -98,16 +99,17 @@ function Form({
 
       <section className="buttonImg">
         <GetAvatar  
-          handleInput = {handleInput}
+          setFormData = {setFormData}
           text ="Subir foto de proyecto"
           name = "image"
+          formData={formData}
           
         />
         <GetAvatar     
-          handleInput = {handleInput}
+          setFormData = {setFormData}
           text = "Subir foto de autora"
           name = "photo"  
-          value = ""        
+          formData={formData}   
         />
       </section>
 

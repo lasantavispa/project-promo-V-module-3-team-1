@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function GetAvatar({ handleInput, text , name }) {
+function GetAvatar({ setFormData, text , name, formData }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -41,7 +41,7 @@ function GetAvatar({ handleInput, text , name }) {
     }
     // si la usuaria no ha elegido ningún fichero y ha puslado en cerrar la ventana de nuestro ordenador, no hago nada
   };
-
+  
   const getImage = () => {
     // cuando el navegador termina de manejar el fichero se ejecuta este método porque lo hemos indicado en  fr.addEventListener('load',  getImage);
 
@@ -50,10 +50,12 @@ function GetAvatar({ handleInput, text , name }) {
 
     //  fr.result contiene los datos del fichero en un formato que se llama base64 que nos vale por que podemos usarlo para pintar una imagen en HTML
     const image = fr.result;
+  
 
     // aquí hago lifting con los datos del fichero
     // lo que haga el componente madre con esta información es otro problema diferente
-    handleInput(image);
+    setFormData({...formData, [name]: image})
+    //llamar a SetFormdata en vez de handleInput
   };
 
   return (
@@ -66,7 +68,6 @@ function GetAvatar({ handleInput, text , name }) {
           style = {{ display: 'none' }}
           onChange = {uploadImage}
           name = {name}
-          value = {fr.result}
         />
       </label>
     </div>
@@ -74,7 +75,7 @@ function GetAvatar({ handleInput, text , name }) {
 }
 
 GetAvatar.propTypes = {
-  handleInput: PropTypes.func.isRequired,
+  setFormData: PropTypes.func.isRequired,
   text: PropTypes.string,
   name: PropTypes.string,
 };
