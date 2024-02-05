@@ -2,7 +2,7 @@
 import logoAlab from '../images/logo-adalab.png';
 import '../scss/core/Variables.scss';
 import '../scss/layout/Header.scss';
-import '../components/ListProject';
+
 
 
 

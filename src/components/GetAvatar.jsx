@@ -78,6 +78,7 @@ GetAvatar.propTypes = {
   setFormData: PropTypes.func.isRequired,
   text: PropTypes.string,
   name: PropTypes.string,
+  formData: PropTypes.string,
 };
 
 export default GetAvatar;
