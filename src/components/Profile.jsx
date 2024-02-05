@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PropTypes from 'prop-types'
 import defaultAvatar from '../images/defaultAvatar.png'
 import '../scss/core/Variables.scss'
