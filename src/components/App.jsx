@@ -9,24 +9,17 @@ import { useState } from 'react';
 
 function App() {
   const [formData, setFormData] = useState({
-    project: '',
+    name: '',
     slogan: '',
-    repo: '',
+    technologies: '',
     demo: '',
-    tech: '',
+    repo: '',
     desc: '',
     author: '',
     job: '',
+    image: '',
+    photo: ''
   });
-
-  // const [project, setName] = useState('');
-  // const [slogan, setSlogan] = useState('');
-  // const [repo, setRepo] = useState('');
-  // const [demo, setDemo] = useState('');
-  // const [tech, setTech] = useState('');
-  // const [desc, setDesc] = useState('');
-  // const [author, setAuthor] = useState('');
-  // const [job, setJob] = useState('');
 
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
@@ -40,7 +33,7 @@ function App() {
 
   const handleInput = (event) => {
     if (event.target.id === 'nameId') {
-      formData.project = event.target.value;
+      formData.name = event.target.value;
       setFormData({ ...formData });
     } else if (event.target.id === 'sloganId') {
       formData.slogan = event.target.value;
@@ -52,7 +45,7 @@ function App() {
       formData.demo = event.target.value;
       setFormData({ ...formData });
     } else if (event.target.id === 'techId') {
-      formData.tech = event.target.value;
+      formData.technologies = event.target.value;
       setFormData({ ...formData });
     } else if (event.target.id === 'descId') {
       formData.desc = event.target.value;

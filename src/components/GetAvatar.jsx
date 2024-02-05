@@ -69,11 +69,6 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
           onChange={uploadImage}
         />
       </label>
-
-      {/* <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div> */}
     </div>
   );
 }
