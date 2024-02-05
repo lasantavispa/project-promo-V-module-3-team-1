@@ -2,12 +2,20 @@ import GetAvatar from './GetAvatar.jsx';
 import '../scss/layout/Form.scss';
 import Card from './Card.jsx';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 function Form({
   handleInput,
   setFormData,
   formData,
 }) {
+
+ 
+
+  const handleClickCreateCard = () => {
+     const [isCardVisible, setIsCardVisible] = useState(false);
+  };  
+
   return (
     <section className="form">
       <h2 className="form__h2">Información</h2>
@@ -116,14 +124,13 @@ function Form({
       <section className="buttonImgCrear">
         <button
           className="buttonImgCrear__large"
-          onClick="{handleClickCreateCard}"
+          onClick={handleClickCreateCard}
         >
           Crear Tarjeta
         </button>
       </section>
 
       <Card />
-      
     </section>
   );
 }

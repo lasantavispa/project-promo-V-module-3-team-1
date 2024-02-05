@@ -1,12 +1,12 @@
 import React from 'react'
 import '../scss/layout/Card.scss'
 
-function Card() {
+function Card( { cardLink }) {
   return (
     <section className="card hidden">
         <span className=""> La tarjeta ha sido creada: </span>
-        <a href="" className="" target="_blank" rel="noreferrer">
-          {' '}
+        <a href={cardLink} className="" target="_blank" rel="noreferrer">
+        { cardLink }
         </a>
       </section>
   )
