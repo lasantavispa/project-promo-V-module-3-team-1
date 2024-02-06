@@ -5,7 +5,7 @@ import logoAlab from '../images/logo-adalab.png';
 import Header from './Header.jsx';
 import Main from './Main.jsx';
 import Footer from './Footer.jsx';
-import callToApi from '../services/api.jsx';
+import callToApi from '../services/Api.js';
 import Card from './Card.jsx';
 import { useEffect, useState } from 'react';
 
@@ -24,14 +24,15 @@ function App() {
     photo: '',
   });
 
-const [cardLink, setCardLink] = useState('');
+const [cardLink, setCardLink] = useState([]);
 
-  useEffect(() => {
-    callToApi().then((response) => {
-      setFormData(response);
-      setCardLink(response.demo);
+  
+    callToApi(formData).then((response) => {
+      setCardLink(response);
+      console.log(response);
     });
-  })
+
+
 
 const handleInput = (ev) => {
   const inputValue = ev.target.value;

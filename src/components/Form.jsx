@@ -10,10 +10,11 @@ function Form({
   formData,
 }) {
 
- 
-
-  const handleClickCreateCard = () => {
-     const [isCardVisible, setIsCardVisible] = useState(false);
+const [hidden, setHidden] = useState('');
+  
+const [isCardVisible, setIsCardVisible] = useState(false);
+  const handleClickCreateCard = (event) => {
+     setIsCardVisible(event.target.value)
   };  
 
   return (
