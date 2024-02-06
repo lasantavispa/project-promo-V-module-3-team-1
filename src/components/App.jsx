@@ -40,19 +40,8 @@ const handleInput = (ev) => {
       <Header />
       <Main
         handleInput={handleInput}
-        avatar={avatar}
-        updateAvatar={updateAvatar}
-        formData={formData}
-        userPhoto={userPhoto}
-        updatePhoto={updatePhoto}
-        // project={project}
-        // slogan={slogan}
-        // repo={repo}
-        // demo={demo}
-        // tech={tech}
-        // desc={desc}
-        // author={author}
-        // job={job}
+        setFormData={setFormData}        
+        formData={formData} 
       />
       <Footer />
     </div>
