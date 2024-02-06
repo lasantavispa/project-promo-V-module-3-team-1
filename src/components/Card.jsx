@@ -1,5 +1,6 @@
-import React from 'react'
+// import React from 'react'
 import '../scss/layout/Card.scss'
+import PropTypes from 'prop-types';
 
 function Card( { cardLink }) {
   return (
@@ -12,4 +13,7 @@ function Card( { cardLink }) {
   )
 }
 
+Card.propTypes = {
+  cardLink : PropTypes.array,
+}
 export default Card

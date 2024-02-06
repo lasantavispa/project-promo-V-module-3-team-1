@@ -23,10 +23,10 @@ function Preview({ formData }) {
             <p className='projectCard__text'> {formData.technologies || 'React JS - HTML -  CSS'}</p>
           </section>
           <section className='projectCard__icons'>
-            <a href={formData.repo} target='_blank'>
+            <a href={formData.repo} target='_blank'  rel="noreferrer">
               <i className='fa-brands fa-github'></i>
             </a>
-            <a href={formData.demo} target='_blank'> 
+            <a href={formData.demo} target='_blank'  rel="noreferrer"> 
               <i className='fa-solid fa-globe'></i>
             </a>
           </section>
