@@ -2,14 +2,12 @@ import '../scss/App.scss';
 import cover2 from '../images/cover_2.jpeg';
 import favicon from '../images/favicon.png';
 import logoAlab from '../images/logo-adalab.png';
-import Header from './Header.jsx';
-import Main from './Main.jsx';
-import Footer from './Footer.jsx';
-import Card from './Card.jsx';
 import callToApi from '../services/Api.js';
 import localStorage from '../services/LocalStorage.js';
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+import CardProject from './cardProject/cardProject.jsx';
+import ListProject from './listProject/ListProject.jsx';
 
 function App() {
   const [formData, setFormData] = useState({});
@@ -40,12 +38,6 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    const storedData = localStorage.getItem("formData");
-    if (storedData) {
-      setFormData(JSON.parse(storedData));
-    }
-  }, []);
 
   useEffect(() => {
     if (userData) {
@@ -79,18 +71,34 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <Header />
-      <Main
-        hidden={hidden}
-        handleClickCreateCard={handleClickCreateCard}
-        handleInput={handleInput}
-        setFormData={setFormData}
-        formData={formData}
-      />
-      <Card cardLink={cardLink} />
-      <Footer />
-    </div>
+    <>
+    <nav>
+    <Link to="/cardProject">Crea tu tarjeta</Link>
+    <Link to="/listProject">Mira tus tarjetas</Link>
+    </nav>
+      <Routes>
+        <Route
+          path="/cardProject"
+          element={
+            <CardProject
+              hidden={hidden}
+              handleClickCreateCard={handleClickCreateCard}
+              handleInput={handleInput}
+              setFormData={setFormData}
+              formData={formData}
+              cardLink={cardLink}
+            />
+          }
+        />
+        <Route 
+         path="/listProject"
+         element={
+          <ListProject formData={formData}/>
+         }
+        />
+      </Routes>
+      
+    </>
   );
 }
 
