@@ -1,23 +1,26 @@
-import HeaderListProyect from "../listProject/HeaderListProyect";
-import MainListProyect from "./MainListProyect";
-import FooterListProyect from "./FooterListProyect";
-import PropTypes from 'prop-types';
+import HeaderListProject from "./HeaderListProject";
+import MainListProject from "./MainListProject";
+import FooterListProject from "./FooterListProject";
+import PropTypes from "prop-types";
 
-
-function ListProject() {
+function ListProject({formData, avatar, userPhoto}) {
   return (
     <div>
-        <HeaderListProyect />
-        <MainListProyect formData={formData} avatar={avatar} userPhoto={userPhoto} />
-        <FooterListProyect />
+      <HeaderListProject />
+      <MainListProject
+        formData={formData}
+        avatar={avatar}
+        userPhoto={userPhoto}
+      />
+      <FooterListProject />
     </div>
-  )
+  );
 }
 
-ListProject.prototype = {
+ListProject.propTypes = {
   formData: PropTypes.object.isRequired,
   avatar: PropTypes.object.isRequired,
-  userPhoto : PropTypes.object.isRequired,
+  userPhoto: PropTypes.object.isRequired,
 };
 
 export default ListProject;

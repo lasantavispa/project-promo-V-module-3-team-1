@@ -1,7 +1,6 @@
-
-import cover2 from "../images/cover_2.jpeg";
-import favicon from "../images/favicon.png";
-import logoAlab from "../images/logo-adalab.png";
+import cover2 from "../../images/cover_2.jpeg";
+import favicon from "../../images/favicon.png";
+import logoAlab from "../../images/logo-adalab.png";
 import Header from "./Header.jsx";
 import Main from "./Main.jsx";
 import Footer from "./Footer.jsx";
@@ -9,8 +8,6 @@ import Card from "./Card.jsx";
 import callToApi from "../services/Api.js";
 import localStorage from "../services/LocalStorage.js";
 import { useEffect, useState } from "react";
-
-
 
 function AppCard() {
   const [formData, setFormData] = useState({

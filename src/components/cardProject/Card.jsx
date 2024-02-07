@@ -1,19 +1,19 @@
 // import React from 'react'
-import '../scss/layout/Card.scss'
-import PropTypes from 'prop-types';
+import "../../scss/layout/Card.scss";
+import PropTypes from "prop-types";
 
-function Card( { cardLink }) {
+function Card({ cardLink }) {
   return (
     <section className="card hidden">
-        <span className=""> La tarjeta ha sido creada: </span>
-        <a href={cardLink} className="" target="_blank" rel="noreferrer">
-        { cardLink }
-        </a>
-      </section>
-  )
+      <span className=""> La tarjeta ha sido creada: </span>
+      <a href={cardLink} className="" target="_blank" rel="noreferrer">
+        {cardLink}
+      </a>
+    </section>
+  );
 }
 
 Card.propTypes = {
-  cardLink : PropTypes.array,
-}
-export default Card
+  cardLink: PropTypes.array,
+};
+export default Card;

@@ -1,10 +1,10 @@
 import "../scss/core/Variables.scss";
 import "../scss/layout/Main.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Preview from "./PreviewListProyect.jsx";
+import Preview from "./PreviewListProject.jsx";
 
-function MainListProyect({ formData, avatar, userPhoto }) {
+function MainListProject({ formData, avatar, userPhoto }) {
   console.log("Avatar in Main:", avatar);
   return (
     <main className="main">
@@ -14,10 +14,10 @@ function MainListProyect({ formData, avatar, userPhoto }) {
   );
 }
 
-MainListProyect.propTypes = {
+MainListProject.propTypes = {
   formData: PropTypes.object.isRequired,
   avatar: PropTypes.object.isRequired,
-  userPhoto : PropTypes.object.isRequired,
+  userPhoto: PropTypes.object.isRequired,
 };
 
-export default MainListProyect;
+export default MainListProject;
