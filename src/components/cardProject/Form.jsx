@@ -1,5 +1,5 @@
 import GetAvatar from './GetAvatar.jsx';
-import '../scss/layout/Form.scss';
+import "../scss/layout/Form.scss";
 import Card from './Card.jsx';
 import PropTypes from 'prop-types';
 
