@@ -28,7 +28,7 @@ function Form({
           placeholder="Nombre del proyecto"
           name="name"
           id="nameId"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.slogan}
@@ -38,7 +38,7 @@ function Form({
           name="slogan"
           id="sloganId"
           placeholder="Slogan"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.repo}
@@ -48,7 +48,7 @@ function Form({
           name="repo"
           id="repoId"
           placeholder="Repo"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.demo}
@@ -58,7 +58,7 @@ function Form({
           placeholder="Demo"
           name="demo"
           id="demoId"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.technologies}
@@ -68,7 +68,7 @@ function Form({
           placeholder="Tecnologías"
           name="technologies"
           id="techId"
-          maxlength="30"
+          maxLength="30"
         />
         <textarea
           value={formData.desc}
@@ -78,7 +78,7 @@ function Form({
           placeholder="Descripción"
           name="desc"
           id="descId"
-          maxlength="150"
+          maxLength="150"
         ></textarea>
       </fieldset>
 
@@ -95,7 +95,7 @@ function Form({
           placeholder="Nombre"
           name="autor"
           id="authorId"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           onChange={handleInput}
@@ -104,7 +104,7 @@ function Form({
           placeholder="Trabajo"
           name="job"
           id="jobId"
-          maxlength="30"
+          maxLength="30"
         />
       </fieldset>
 
