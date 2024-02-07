@@ -48,7 +48,6 @@ function Form({
           name="repo"
           id="repoId"
           placeholder="Repo"
-          maxlength="30"
         />
         <input
           value={formData.demo}
@@ -58,7 +57,6 @@ function Form({
           placeholder="Demo"
           name="demo"
           id="demoId"
-          maxlength="30"
         />
         <input
           value={formData.technologies}
