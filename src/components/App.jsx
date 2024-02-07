@@ -6,40 +6,40 @@ import Header from "./Header.jsx";
 import Main from "./Main.jsx";
 import Footer from "./Footer.jsx";
 import { useState } from "react";
-
+import { useEffect } from "react";
 
 function App() {
   const [formData, setFormData] = useState({
-    name: '',
-    slogan: '',
-    technologies: '',
-    demo: '',
-    repo: '',
-    desc: '',
-    author: '',
-    job: '',
-    image: '',
-    photo: '',
+    name: "",
+    slogan: "",
+    technologies: "",
+    demo: "",
+    repo: "",
+    desc: "",
+    autor: "",
+    job: "",
+    image: "",
+    photo: "",
   });
 
-const handleInput = (ev) => {
-  const inputValue = ev.target.value;
-  const inputName = ev.target.name;
-  setFormData({
-    ...formData,
-    [inputName] : inputValue
-  });
-  console.log(formData);
-}
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    setFormData({
+      ...formData,
+      [inputName]: inputValue,
+    });
+    console.log(formData);
+  };
+
 
   return (
-
     <div className="container">
       <Header />
       <Main
         handleInput={handleInput}
-        setFormData={setFormData}        
-        formData={formData} 
+        setFormData={setFormData}
+        formData={formData}
       />
       <Footer />
     </div>
