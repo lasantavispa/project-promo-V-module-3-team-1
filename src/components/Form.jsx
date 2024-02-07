@@ -7,7 +7,10 @@ function Form({
   handleInput,
   setFormData,
   formData,
+  handleClickCreateCard,
+  hidden
 }) {
+
   return (
     <section className="form">
       <h2 className="form__h2">Información</h2>
@@ -84,7 +87,7 @@ function Form({
           className="project__input"
           type="text"
           placeholder="Nombre"
-          name="author"
+          name="autor"
           id="authorId"
         />
         <input
@@ -116,20 +119,23 @@ function Form({
       <section className="buttonImgCrear">
         <button
           className="buttonImgCrear__large"
-          onClick="{handleClickCreateCard}"
+          onClick={handleClickCreateCard}
+          {...hidden}
         >
           Crear Tarjeta
         </button>
       </section>
 
       <Card />
-      
     </section>
   );
 }
 
 Form.propTypes = {
+  setFormData: PropTypes.func.isRequired,
   formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
+  handleClickCreateCard: PropTypes.func.isRequired,
+  hidden: PropTypes.string.isRequired
 };
 export default Form;
