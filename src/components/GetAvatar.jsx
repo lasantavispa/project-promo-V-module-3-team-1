@@ -25,13 +25,19 @@ function GetAvatar({ setFormData, text , name, formData }) {
     console.log(
       'El primero de los ficheros elegidos es',
       ev.currentTarget.files[0]
+      
     );
 
     // compruebo si la usuaria ha elegido al menos un fichero
     if (ev.currentTarget.files.length > 0) {
       // guardo el primer fichero en myFile
       const myFile = ev.currentTarget.files[0];
-
+      // Verificar el tamaño del archivo antes de cargarlo
+      if (myFile.size > 50 * 1024) { // 50 KB en bytes
+        alert('La imagen seleccionada excede el tamaño máximo permitido de 50 KB.');
+        ev.currentTarget.value = null; // Limpiar el valor del input de archivo
+        return; // Salir de la función sin cargar la imagen
+      }
       // añado un evento load al manejador de ficheros
       // por qué añado un evento, pues porque esto es una acción asíncrona, imaginemos que el fichero pesa 5 Gb, el navegador puede tardar unos cuantos segundos en cargar y procesar el fichero, por eso le decimos "navegador, cuando termines de cargar el fichero me ejecutas el método  image"
       fr.addEventListener('load', getImage);
