@@ -24,13 +24,10 @@ function App() {
     photo: "",
   });
 
-<<<<<<< HEAD
-=======
   const [cardLink, setCardLink] = useState([]);
   const [hidden, setHidden] = useState("");
   // const [userData, setUserData] = useState(localStorage.get("userData", ""));
 
->>>>>>> dev
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
@@ -41,8 +38,6 @@ function App() {
     console.log(formData);
   };
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
     callToApi(formData).then((response) => {
       setCardLink(Object.values(response));
@@ -70,7 +65,6 @@ function App() {
   const handleClickCreateCard = (ev) => {
     setHidden(ev.target.value);
   };
->>>>>>> dev
 
   return (
     <div className="container">
