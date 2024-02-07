@@ -6,7 +6,7 @@ import '../scss/layout/Preview.scss';
 function Preview({ formData }) {
   return (
     <section className='preview'>
-      <img className='preview__image' src={formData.image || cover} alt='' />
+      <img className='preview__image' src={formData.photo || cover} alt='' />
 
       <section className='preview__author'>
         <section className='projectCard'>
@@ -33,7 +33,7 @@ function Preview({ formData }) {
         </section>
 
         <section className='author'>
-          <img className='author__image' src={formData.photo || user} alt='' />
+          <img className='author__image' src={formData.image || user} alt='' />
           <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
           <p className='author__name'> {formData.autor || 'Emmelie Björklund'} </p>
         </section>

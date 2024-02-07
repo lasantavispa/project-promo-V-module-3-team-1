@@ -104,14 +104,14 @@ function Form({
         <GetAvatar  
           setFormData = {setFormData}
           text ="Subir foto de proyecto"
-          name = "image"
+          name = "photo"
           formData={formData}
           
         />
         <GetAvatar     
           setFormData = {setFormData}
           text = "Subir foto de autora"
-          name = "photo"  
+          name = "image"  
           formData={formData}   
         />
       </section>
