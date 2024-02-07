@@ -5,7 +5,6 @@ import logoAlab from '../images/logo-adalab.png';
 import Header from './Header.jsx';
 import Main from './Main.jsx';
 import Footer from './Footer.jsx';
-import callToApi from '../services/Api.js';
 import Card from './Card.jsx';
 import { useEffect, useState } from 'react';
 
@@ -26,20 +25,46 @@ function App() {
 
 const [cardLink, setCardLink] = useState([]);
 
+const handleClickCreateCard = () => {
+  //condicional de si los campos están vacíos: NO HAGA NADA.
+  //y si no: 
+  //llama a la api: 
+  if (data.name === "" 
+  && data.slogan === "" 
+  && data.repo === "" 
+  && data.demo === "" 
+  && data.technologies === "" 
+  && data.desc === "" 
+  && data.autor === "" 
+  && data.job === "" 
+  && data.image === "" 
+  && data.photo === "" ) {
+  console.log("Revisa los campos")
+
+} else {
   
-    callToApi(formData).then((response) => {
-      setCardLink(response);
-      console.log(response);
-    });
+  fetch('https://dev.adalab.es/api/projectCard', {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: { 'Content-type': 'application/json' },
+})
+  .then((response) => response.json())
+  .then((result) => {
+    console.log(result);
+    setCardLink(result);
+  .catch((error) => console.log(error));
+    console.log("La tarjeta ha sido creada")}
+)
+  }
 
 
 
-const handleInput = (ev) => {
+function handleInput(ev) {
   const inputValue = ev.target.value;
   const inputName = ev.target.name;
   setFormData({
     ...formData,
-    [inputName] : inputValue
+    [inputName]: inputValue
   });
   console.log(formData);
 }
@@ -56,6 +81,7 @@ const handleInput = (ev) => {
       <Footer />
     </div>
   );
+ 
 }
 
 export default App;
