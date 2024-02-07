@@ -8,7 +8,7 @@ const get = (key, defaultValue) => {
     if (localStorageData === null) {
       return defaultValue;
     } else {
-      return JSON.stringify(localStorageData);
+      return JSON.parse(localStorageData);
     }
   };
   
@@ -27,6 +27,17 @@ const get = (key, defaultValue) => {
   const clear = () => {
     localStorage.clear();
   };
+  const initializeData = () => {
+    const existingData = get('userData', null); // Comprueba si ya existen datos almacenados
+    if (existingData === null) {
+      // Si no hay datos almacenados, establece datos predeterminados
+      const defaultData = { username: 'guest' }; // Aquí puedes definir los datos predeterminados
+      set('userData', defaultData);
+    }
+  };
+  
+  // Llamada a la función de inicialización de datos
+  initializeData();
   
   // Creamos un objeto temporal, que es el que queremos exportar
   // Este objeto tiene una propiedad get cuyo valor es la función get

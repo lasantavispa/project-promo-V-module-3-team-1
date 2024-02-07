@@ -28,10 +28,7 @@ function App() {
   const [hidden, setHidden] = useState("");
   const [userData, setUserData] = useState({});
 
-  // const handleUserData = ()=>{
-  //   const storedForm = JSON.parse(localStorage.getItem("user"));
-  //   setUserData(storedForm);
-  // }
+
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -42,7 +39,13 @@ function App() {
     });
   };
 
-  
+  useEffect(() => {
+    const storedData = localStorage.getItem("formData");
+    if (storedData) {
+      setFormData(JSON.parse(storedData));
+    }
+  }, []);
+
   useEffect(() => {
     localStorage.set("user",{
       name: formData.name,
