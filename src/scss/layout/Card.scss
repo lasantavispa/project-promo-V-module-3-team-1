@@ -1,0 +1,14 @@
+@import "../core/Variables.scss";
+
+.card {
+    text-align: center;
+    border: solid 2px $white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: $white;
+    padding-top: 15px;
+}
+
+.hidden {
+    display: none;
+  }
