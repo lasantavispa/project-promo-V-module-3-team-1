@@ -26,7 +26,12 @@ function App() {
 
   const [cardLink, setCardLink] = useState([]);
   const [hidden, setHidden] = useState("");
-  // const [userData, setUserData] = useState(localStorage.get("userData", ""));
+  const [userData, setUserData] = useState({});
+
+  // const handleUserData = ()=>{
+  //   const storedForm = JSON.parse(localStorage.getItem("user"));
+  //   setUserData(storedForm);
+  // }
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -35,17 +40,9 @@ function App() {
       ...formData,
       [inputName]: inputValue,
     });
-    console.log(formData);
   };
 
   
-  useEffect(() => {
-    callToApi(formData).then((response) => {
-      setCardLink(Object.values(response));
-      console.log(response);
-    });
-  }, [formData]);
-
   useEffect(() => {
     localStorage.set("user",{
       name: formData.name,
@@ -60,11 +57,15 @@ function App() {
       photo: formData.photo,
      })
     console.log("han cambiado los datos introducidos");
+    // setUserData(JSON.parse(localStorage.getItem("user")));
   }, [formData]);
-  console.log(formData);
 
   const handleClickCreateCard = (ev) => {
-    setHidden(ev.target.value);
+    // setHidden(ev.target.value);
+    callToApi(formData).then((response) => {
+      setCardLink(Object.values(response));
+      console.log(response.cardURL);
+    });
   };
 
   return (

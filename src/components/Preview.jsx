@@ -35,7 +35,7 @@ function Preview({ formData }) {
         <section className='author'>
           <img className='author__image' src={formData.photo || user} alt='' />
           <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
-          <p className='author__name'> {formData.author || 'Emmelie Björklund'} </p>
+          <p className='author__name'> {formData.autor || 'Emmelie Björklund'} </p>
         </section>
       </section>
     </section>
