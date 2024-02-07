@@ -64,7 +64,6 @@ function App() {
 
   const handleClickCreateCard = (ev) => {
     setHidden(ev.target.value);
-    setFormData(ev.target.value);
   };
 
   return (
