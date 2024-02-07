@@ -18,7 +18,7 @@ function App() {
     demo: "",
     repo: "",
     desc: "",
-    author: "",
+    autor: "",
     job: "",
     image: "",
     photo: "",
@@ -46,14 +46,14 @@ function App() {
   }, [formData]);
 
   useEffect(() => {
-    localStorage.set({
+    localStorage.set("user",{
       name: formData.name,
       slogan: formData.slogan,
       technologies: formData.technologies,
       demo: formData.demo,
       repo: formData. repo,
       desc: formData.desc,
-      author: formData.author,
+      autor: formData.autor,
       job: formData.job,
       image: formData.image,
       photo: formData.photo,

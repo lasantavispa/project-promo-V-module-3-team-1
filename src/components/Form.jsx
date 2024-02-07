@@ -87,7 +87,7 @@ function Form({
           className="project__input"
           type="text"
           placeholder="Nombre"
-          name="author"
+          name="autor"
           id="authorId"
         />
         <input

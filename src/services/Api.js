@@ -3,12 +3,14 @@
 const callToApi = (formData) => {
     return fetch ("https://dev.adalab.es/api/projectCard", {
         method: "POST",
-        body: JSON.stringify(),
+        body: JSON.stringify(formData),
         headers: {"Content-type": "application/json"},
     })
     .then((response) => response.json())
     .then((responseData) => {
+        console.log(responseData)
         return responseData;
+        
         
     })
     .catch((error)=> {
@@ -21,7 +23,7 @@ const callToApi = (formData) => {
             demo: formData.demo.value,
             repo: formData. repo.value,
             desc: formData.desc.value,
-            author: formData.author.value,
+            autor: formData.autor.value,
             job: formData.job.value,
             image: formData.image.value,
             photo: formData.photo.value,
