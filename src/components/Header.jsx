@@ -1,6 +1,7 @@
 import logoAlab from '../images/logo-adalab.png';
 import '../scss/core/Variables.scss';
 import '../scss/layout/Header.scss';
+import '../scss/layout/Form.scss';
 
 
 function Header () {
@@ -18,7 +19,7 @@ function Header () {
           <p className="hero__text">
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
-          <button className="hero__btn">ver proyectos</button>
+          <button className="buttonImgCrear__large">ver proyectos</button>
         </div>
       </header>
       )
