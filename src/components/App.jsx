@@ -10,14 +10,16 @@ import CardProject from './cardProject/CardProject.jsx';
 import ListProject from './listProject/ListProject.jsx';
 import ButtonCreateCard from './ButtonCreateCard.jsx';
 import Header from './Header.jsx';
-// import Hero from './Hero.jsx';
+import Hero from './Hero.jsx';
 import ButtonSeeProjects from './ButtonSeeProjects.jsx';
+
 
 function App() {
   const location = useLocation();
   const [formData, setFormData] = useState({});
   const [cardLink, setCardLink] = useState([]);
   const [hidden, setHidden] = useState('');
+
   const [userData, setUserData] = useState(
     localStorage.get('user') || {
       name: '',
@@ -109,10 +111,13 @@ function App() {
           <ListProject formData={formData}/>
          }
         />
+        <Route path='/'/>
+        {/* Investigar ruta App */}
       </Routes>
       
     </>
   );
 }
+
 
 export default App;

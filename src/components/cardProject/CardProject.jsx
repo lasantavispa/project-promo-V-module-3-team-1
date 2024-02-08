@@ -18,8 +18,9 @@ function CardProject({hidden, handleClickCreateCard, setFormData, formData, card
         handleInput={handleInput}
         setFormData={setFormData}
         formData={formData}
+        cardLink={cardLink}
       />
-      <Card cardLink={cardLink} />
+    
       <Footer />
     </div>
   );
@@ -31,7 +32,7 @@ CardProject.propTypes = {
     handleInput: PropTypes.func.isRequired,
     handleClickCreateCard: PropTypes.func.isRequired,
     hidden: PropTypes.string.isRequired,
-    cardLink : PropTypes.array,
+    cardLink : PropTypes.string.isRequired,
     buttonComponent: PropTypes.element.isRequired,
   };
 export default CardProject;

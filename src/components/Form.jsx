@@ -8,7 +8,8 @@ function Form({
   setFormData,
   formData,
   handleClickCreateCard,
-  hidden
+  hidden,
+  cardLink
 }) {
 
   return (
@@ -134,7 +135,7 @@ function Form({
         </button>
       </section>
 
-      <Card />
+      <Card cardLink={cardLink} />
     </section>
   );
 }
@@ -144,6 +145,7 @@ Form.propTypes = {
   formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
-  hidden: PropTypes.string.isRequired
+  hidden: PropTypes.string.isRequired,
+  cardLink : PropTypes.string.isRequired,
 };
 export default Form;
