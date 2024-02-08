@@ -63,7 +63,7 @@ function App() {
   }, [formData]);
 
   const handleClickCreateCard = (ev) => {
-    // setHidden(ev.target.value);
+    setHidden(ev.target.value);
     callToApi(formData).then((response) => {
       setCardLink(Object.values(response));
       console.log(response.cardURL);

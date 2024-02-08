@@ -127,8 +127,7 @@ function Form({
           className="buttonImgCrear__large"
           onClick={handleClickCreateCard}
           {...hidden}
-        >
-          Crear Tarjeta
+        >Crear Tarjeta
         </button>
       </section>
 
