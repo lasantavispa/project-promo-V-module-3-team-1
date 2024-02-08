@@ -1,15 +1,17 @@
 import React from 'react';
-import Header from '../Header.jsx';
+import PropTypes from 'prop-types';
 import Main from '../Main.jsx';
 import Footer from '../Footer.jsx';
 import Card from '../Card.jsx';
-import PropTypes from 'prop-types';
-
+import Hero from '../Hero.jsx';
+import ButtonSeeProjects from '../ButtonSeeProjects.jsx';
+import '../../scss/core/Variables.scss';
+import '../../scss/layout/Header.scss';
 
 function CardProject({hidden, handleClickCreateCard, setFormData, formData, cardLink, handleInput}) {
   return (
-    <div className="container">
-      <Header />
+    <div>
+    <Hero buttonComponent={<ButtonSeeProjects/>}/>
       <Main
         hidden={hidden}
         handleClickCreateCard={handleClickCreateCard}
@@ -30,5 +32,6 @@ CardProject.propTypes = {
     handleClickCreateCard: PropTypes.func.isRequired,
     hidden: PropTypes.string.isRequired,
     cardLink : PropTypes.array,
+    buttonComponent: PropTypes.element.isRequired,
   };
 export default CardProject;

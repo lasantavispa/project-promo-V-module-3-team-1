@@ -5,11 +5,16 @@ import logoAlab from '../images/logo-adalab.png';
 import callToApi from '../services/Api.js';
 import localStorage from '../services/LocalStorage.js';
 import { useEffect, useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import CardProject from './cardProject/cardProject.jsx';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import CardProject from './cardProject/CardProject.jsx';
 import ListProject from './listProject/ListProject.jsx';
+import ButtonCreateCard from './ButtonCreateCard.jsx';
+import Header from './Header.jsx';
+// import Hero from './Hero.jsx';
+import ButtonSeeProjects from './ButtonSeeProjects.jsx';
 
 function App() {
+  const location = useLocation();
   const [formData, setFormData] = useState({});
   const [cardLink, setCardLink] = useState([]);
   const [hidden, setHidden] = useState('');
@@ -37,7 +42,10 @@ function App() {
       [inputName]: inputValue,
     });
   };
-
+  // Verificar si la ruta actual es '/cardProject' o '/listProject'
+  useEffect(() => {
+    setHidden(location.pathname === '/cardProject' || location.pathname === '/listProject');
+  }, [location.pathname]);
 
   useEffect(() => {
     if (userData) {
@@ -72,10 +80,15 @@ function App() {
 
   return (
     <>
-    <nav>
-    <Link to="/cardProject">Crea tu tarjeta</Link>
-    <Link to="/listProject">Mira tus tarjetas</Link>
-    </nav>
+    <div>
+      <Header/>
+      {!hidden && (
+          <div className='twoButtons'>
+            <ButtonCreateCard/>
+            <ButtonSeeProjects/>
+          </div>
+        )}
+    </div>
       <Routes>
         <Route
           path="/cardProject"
