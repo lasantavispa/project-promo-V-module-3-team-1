@@ -19,7 +19,7 @@ function Header () {
           <p className="hero__text">
             Escaparate en línea para recoger ideas a través de la tecnología.
           </p>
-          <button className="buttonImgCrear__large">ver proyectos</button>
+          <button className="buttonImgCrear__large">Ver Proyectos</button>
         </div>
       </header>
       )
