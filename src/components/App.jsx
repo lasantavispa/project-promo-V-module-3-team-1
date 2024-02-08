@@ -35,7 +35,7 @@ function App() {
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
-    const inputName = ev.target.name;
+    const inputName = ev.target.name; 
     setFormData({
       ...formData,
       [inputName]: inputValue,
