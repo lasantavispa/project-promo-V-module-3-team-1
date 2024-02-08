@@ -8,7 +8,9 @@ function Form({
   setFormData,
   formData,
   handleClickCreateCard,
-  hidden
+  hidden,
+  cardLink,
+  handleClearForm
 }) {
 
   return (
@@ -28,7 +30,7 @@ function Form({
           placeholder="Nombre del proyecto"
           name="name"
           id="nameId"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.slogan}
@@ -38,7 +40,7 @@ function Form({
           name="slogan"
           id="sloganId"
           placeholder="Slogan"
-          maxlength="30"
+          maxLength="30"
         />
         <input
           value={formData.repo}
@@ -48,7 +50,6 @@ function Form({
           name="repo"
           id="repoId"
           placeholder="Repo"
-          maxlength="30"
         />
         <input
           value={formData.demo}
@@ -58,7 +59,6 @@ function Form({
           placeholder="Demo"
           name="demo"
           id="demoId"
-          maxlength="30"
         />
         <input
           value={formData.technologies}
@@ -68,7 +68,7 @@ function Form({
           placeholder="Tecnologías"
           name="technologies"
           id="techId"
-          maxlength="30"
+          maxLength="30"
         />
         <textarea
           value={formData.desc}
@@ -78,7 +78,7 @@ function Form({
           placeholder="Descripción"
           name="desc"
           id="descId"
-          maxlength="150"
+          maxLength="150"
         ></textarea>
       </fieldset>
 
@@ -89,22 +89,24 @@ function Form({
         </section>
 
         <input
+          value={formData.autor}
           onChange={handleInput}
           className="project__input"
           type="text"
           placeholder="Nombre"
           name="autor"
           id="authorId"
-          maxlength="30"
+          maxLength="30"
         />
         <input
+          value={formData.job}
           onChange={handleInput}
           className="project__input"
           type="text"
           placeholder="Trabajo"
           name="job"
           id="jobId"
-          maxlength="30"
+          maxLength="30"
         />
       </fieldset>
 
@@ -129,12 +131,19 @@ function Form({
           className="buttonImgCrear__large"
           onClick={handleClickCreateCard}
           {...hidden}
-        >
-          Crear Tarjeta
+        >Crear Tarjeta
+        </button>
+      </section>
+      <Card cardLink={cardLink} hidden={hidden}/>
+
+      <section className="buttonImgCrear">
+        <button
+          className="buttonImgCrear__large"
+          onClick={handleClearForm}
+        >Limpiar Formulario
         </button>
       </section>
 
-      <Card />
     </section>
   );
 }
@@ -144,6 +153,7 @@ Form.propTypes = {
   formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
-  hidden: PropTypes.string.isRequired
+  hidden: PropTypes.string.isRequired,
+  cardLink : PropTypes.string.isRequired
 };
 export default Form;

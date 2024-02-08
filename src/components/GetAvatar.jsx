@@ -61,7 +61,7 @@ function GetAvatar({ setFormData, text , name, formData }) {
     // aquí hago lifting con los datos del fichero
     // lo que haga el componente madre con esta información es otro problema diferente
     setFormData({...formData, [name]: image})
-    //llamar a SetFormdata en vez de handleInput
+  
   };
 
   return (
@@ -84,7 +84,6 @@ GetAvatar.propTypes = {
   setFormData: PropTypes.func.isRequired,
   text: PropTypes.string,
   name: PropTypes.string,
-  formData: PropTypes.object.isRequired,
 };
 
 export default GetAvatar;

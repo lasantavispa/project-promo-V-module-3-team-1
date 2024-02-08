@@ -12,8 +12,8 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [formData, setFormData] = useState({});
-  const [cardLink, setCardLink] = useState([]);
-  const [hidden, setHidden] = useState('');
+  const [cardLink, setCardLink] = useState('');
+  const [hidden, setHidden] = useState('hidden');
   const [userData, setUserData] = useState(
     localStorage.get('user') || {
       name: '',
@@ -28,7 +28,6 @@ function App() {
       photo: '',
     }
   );
-  console.log(userData);
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -70,12 +69,32 @@ function App() {
   }, [formData]);
 
   const handleClickCreateCard = (ev) => {
-    // setHidden(ev.target.value);
+    ev.preventDefault;
+    setHidden('');
     callToApi(formData).then((response) => {
-      setCardLink(Object.values(response));
+      setCardLink(response.cardURL);
       console.log(response.cardURL);
     });
   };
+
+  const handleClearForm = (ev)=>{
+    ev.preventDefault;
+    localStorage.remove('user');
+    setFormData({
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    })
+    setHidden('hidden');
+    setCardLink('');
+  }
 
   return (
     <div className='container'>
@@ -86,8 +105,9 @@ function App() {
         handleInput={handleInput}
         setFormData={setFormData}
         formData={formData}
+        cardLink={cardLink}
+        handleClearForm={handleClearForm}
       />
-      <Card cardLink={cardLink} />
       <Footer />
     </div>
   );
