@@ -5,7 +5,9 @@ import '../scss/layout/Header.scss';
 
 function ButtonSeeProjects() {
   return (
-    <button className="hero__btn"><Link to="/listProject" >Mira tus tarjetas</Link></button>
+    <Link to="/listProject"className="hero__btn" >
+    <button >Mira tus tarjetas</button>
+    </Link>
     
   )
 }

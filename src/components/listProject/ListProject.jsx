@@ -16,8 +16,6 @@ function ListProject({ formData, buttonComponent }) {
         <Preview formData={formData} />
         <Preview formData={formData} />
       </div>
-
-      <Footer />
     </div>
   );
 }
