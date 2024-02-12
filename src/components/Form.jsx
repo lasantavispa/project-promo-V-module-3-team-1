@@ -156,7 +156,7 @@ Form.propTypes = {
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
   hidden: PropTypes.string.isRequired,
-  cardLink : PropTypes.string.isRequired,
+  cardLink : PropTypes.string,
   handleClearForm: PropTypes.func.isRequired,
 };
 export default Form;

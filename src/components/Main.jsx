@@ -28,7 +28,7 @@ function Main({ handleInput, setFormData, formData, handleClickCreateCard, hidde
     formData: PropTypes.object.isRequired,
     handleClickCreateCard: PropTypes.func.isRequired,
     hidden: PropTypes.string.isRequired,
-    cardLink : PropTypes.string.isRequired,
+    cardLink : PropTypes.string,
     handleClearForm: PropTypes.func.isRequired,
 }
 
