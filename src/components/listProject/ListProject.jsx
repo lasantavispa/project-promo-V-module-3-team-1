@@ -8,7 +8,7 @@ import '../../scss/layout/Header.scss';
 
 
 
-function ListProject({ formData, buttonComponent }) {
+function ListProject({ formData }) {
   return (
     <div className="conta">
       <ButtonCreateCard />
@@ -21,7 +21,6 @@ function ListProject({ formData, buttonComponent }) {
 }
 ListProject.propTypes = {
   formData: PropTypes.object.isRequired,
-  buttonComponent: PropTypes.element.isRequired,
 };
 
 export default ListProject;

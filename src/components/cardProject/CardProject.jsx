@@ -12,6 +12,7 @@ function CardProject({
   formData,
   cardLink,
   handleInput,
+  handleClearForm,
 }) {
   return (
     <div>
@@ -23,6 +24,7 @@ function CardProject({
         setFormData={setFormData}
         formData={formData}
         cardLink={cardLink}
+        handleClearForm={handleClearForm}
       />
     </div>
   );
@@ -35,6 +37,6 @@ CardProject.propTypes = {
   handleClickCreateCard: PropTypes.func.isRequired,
   hidden: PropTypes.string.isRequired,
   cardLink: PropTypes.string.isRequired,
-  buttonComponent: PropTypes.element.isRequired,
+  handleClearForm: PropTypes.func.isRequired,
 };
 export default CardProject;

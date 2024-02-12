@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import '../scss/core/Variables.scss';
 import '../scss/layout/Header.scss';
 
@@ -13,8 +12,6 @@ function Hero() {
   </div>
   )
 }
-Hero.propTypes = {
-    buttonComponent: PropTypes.element.isRequired,
-  };
+
 
 export default Hero;

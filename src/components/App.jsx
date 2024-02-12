@@ -23,8 +23,8 @@ function App() {
 
   //Variables estado
   const [formData, setFormData] = useState({});
-  const [cardLink, setCardLink] = useState([]);
-  const [hidden, setHidden] = useState('');
+  const [cardLink, setCardLink] = useState('');
+  const [hidden, setHidden] = useState('hidden');
 
   const [userData, setUserData] = useState(
     localStorage.get('user') || {
@@ -50,12 +50,12 @@ function App() {
     });
   };
   // Verificar si la ruta actual es '/cardProject' o '/listProject'
-  useEffect(() => {
-    setHidden(
-      location.pathname === '/cardProject' ||
-        location.pathname === '/listProject'
-    );
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   setHidden(
+  //     location.pathname === '/cardProject' ||
+  //       location.pathname === '/listProject'
+  //   );
+  // }, [location.pathname]);
 
   useEffect(() => {
     if (userData) {
