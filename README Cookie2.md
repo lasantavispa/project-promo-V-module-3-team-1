@@ -1,12 +1,14 @@
 
 
-
+![Logo Cookie Team](src/images/cookielogo1.png)
 # ¡¡Proyectos molones!! :)
 
 https://avispas.github.io/project-promo-V-module-3-team-1/
 
 . Se nos pidió dar funcionalidad a una página cuyo objetivo es crear una ficha tipo tarjeta, donde el usuario rellenará un formulario con sus datos, pudiendo añadir trabajos personales de desarrollo de software, entre otros, junto con documentos gráficos tanto de su persona para el perfil de la tarjeta, como del propio proyecto en sí. 
 Tras la creación de la tarjeta , esta generará un link personal y una previsualización de la misma. 
+
+![Example from design](src/images/zeplin%20design.png)
 
 Hemos incorporado un botón de reset para vaciar el local storage y los campos del formulario.
 Hemos trabajado en la creación de una nueva estructura de componentes donde los ficheros están interrelacionados a través de rutas estáticas.
@@ -70,6 +72,8 @@ https://github.com/LauraSabrin
 
 
 ## Screenshots
+
+
 
 
 
