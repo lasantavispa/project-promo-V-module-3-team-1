@@ -2,130 +2,127 @@
 @import "../core/Mixins.scss";
 
 .form {
-    @include displayForm;
-    width: 100%;
-    gap: 20px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  @include displayForm;
+  width: 100%;
+  gap: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
   border-radius: 10px;
-  
-    &__h2 {
-      color: $white;
-      text-align: center;
-      padding-top: 20px;;
-    }
-    @media (min-width: 768px) {
-      width: 40%;
-    }
-  }
-  
-  .askInfo {
-    padding: 10px;
+
+  &__h2 {
+    color: $white;
     text-align: center;
-    color: $white;  
-    &__subtitle {
-      padding-bottom: 10px;
-    }  
-    &__line {
-      width: 100%;
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.75),
-        rgba(255, 255, 255, 0)
-      );
-    }
+    padding-top: 20px;
   }
-  
-  .project {
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 10px;
-     }
-  .project, 
-  .project__input,
-  .author {
-    @include displayForm;
-    gap: 10px;
-    border: none;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  @media (min-width: 768px) {
+    width: 40%;
+  }
+}
+
+.askInfo {
+  padding: 10px;
+  text-align: center;
+  color: $white;
+  &__subtitle {
+    padding-bottom: 10px;
+  }
+  &__line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+.project {
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+.project {
+  @include displayForm;
+  gap: 10px;
+  border: none;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
-  
-    &__input {
-      background-color: $dark;
-      border: solid 2px $white;
-      border-radius: 40px;
-      height: 42.72px;
-      color: $white;
-      padding-left: 15px;     
-      // ::placeholder {
-      //   color: $white;
-      // }
-    }
-  
-    &__textarea {
-      background-color: $dark;
-      border-color: $white;
-      border-radius: 20px;
-      height: 42.72px;
-      color: $white;
-      padding-left: 15px;
-      padding-top: 10px;
-      height: 110px; 
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-      border: solid 1px rgba(0, 0, 0, 0);
-      background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
-      border: solid 2px $white;
-      // ::placeholder {
-      //   color: $white;
-      // }
-    }
+
+  &__input {
+    background-color: $dark;
+    border: solid 2px $white;
+    border-radius: 40px;
+    height: 42.72px;
+    color: $white;
+    padding-left: 15px;
+    // ::placeholder {
+    //   color: $white;
+    // }
   }
 
-  .buttonImg {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   gap: 10px;
+  &__textarea {
+    background-color: $dark;
+    border-color: $white;
+    border-radius: 20px;
+    height: 42.72px;
+    color: $white;
+    padding-left: 15px;
+    padding-top: 10px;
+    height: 110px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px rgba(0, 0, 0, 0);
+    background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
+    border: solid 2px $white;
+    // ::placeholder {
+    //   color: $white;
+    // }
   }
-  
-  .buttonImgCrear {
-    @include buttonStyles;
-    &__large {
-      @include commonButton;
-      width: 200px;      
-      border: solid 2px $white; 
-      display: flex;
-      align-items: center; 
-      justify-content: center;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  border: solid 1px rgba(0, 0, 0, 0);
-  background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
-    }
+}
+
+.buttonImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.buttonImgCrear {
+  @include buttonStyles;
+  &__large {
+    @include commonButton;
+    width: 200px;
+    border: solid 2px $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px rgba(0, 0, 0, 0);
+    background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
   }
-  
-  
+}
+
 .project {
-    &__line {
-      width: 100%;
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        rgba(1, 1, 1, 0.75),
-        rgba(255, 255, 255, 0)
-      );
-    }
-    &__technologies {
-      background-color: lightgray;
-      border-radius: 20px;
-      font-size: 14px;
-      padding: 10px;
-      width: 70%;
-    }
+  &__line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(1, 1, 1, 0.75),
+      rgba(255, 255, 255, 0)
+    );
   }
+  &__technologies {
+    background-color: lightgray;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px;
+    width: 70%;
+  }
+}
