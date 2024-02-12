@@ -1,23 +1,31 @@
+// css
 import '../scss/App.scss';
+//img
 import cover2 from '../images/cover_2.jpeg';
 import favicon from '../images/favicon.png';
 import logoAlab from '../images/logo-adalab.png';
+//API y LS
 import callToApi from '../services/Api.js';
 import localStorage from '../services/LocalStorage.js';
+//react
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+//Componentes
+import Header from './Header.jsx';
+import LandingPage from './landingPage/LandingPage.jsx';
 import CardProject from './cardProject/CardProject.jsx';
 import ListProject from './listProject/ListProject.jsx';
-import ButtonCreateCard from './ButtonCreateCard.jsx';
-import Header from './Header.jsx';
-// import Hero from './Hero.jsx';
-import ButtonSeeProjects from './ButtonSeeProjects.jsx';
+import Footer from './Footer.jsx';
 
 function App() {
+  //Dónde lo usamos?
   const location = useLocation();
+
+  //Variables estado
   const [formData, setFormData] = useState({});
   const [cardLink, setCardLink] = useState([]);
   const [hidden, setHidden] = useState('');
+
   const [userData, setUserData] = useState(
     localStorage.get('user') || {
       name: '',
@@ -32,7 +40,6 @@ function App() {
       photo: '',
     }
   );
-  console.log(userData);
 
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
@@ -44,7 +51,10 @@ function App() {
   };
   // Verificar si la ruta actual es '/cardProject' o '/listProject'
   useEffect(() => {
-    setHidden(location.pathname === '/cardProject' || location.pathname === '/listProject');
+    setHidden(
+      location.pathname === '/cardProject' ||
+        location.pathname === '/listProject'
+    );
   }, [location.pathname]);
 
   useEffect(() => {
@@ -71,25 +81,38 @@ function App() {
   }, [formData]);
 
   const handleClickCreateCard = (ev) => {
-    // setHidden(ev.target.value);
+    ev.preventDefault;
+    setHidden('');
     callToApi(formData).then((response) => {
-      setCardLink(Object.values(response));
+      setCardLink(response.cardURL);
       console.log(response.cardURL);
     });
   };
 
+  const handleClearForm = (ev) => {
+    ev.preventDefault;
+    localStorage.remove('user');
+    setFormData({
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    });
+    setHidden('hidden');
+    setCardLink('');
+  };
+
   return (
     <>
-    <div>
-      <Header/>
-      {!hidden && (
-          <div className='twoButtons'>
-            <ButtonCreateCard/>
-            <ButtonSeeProjects/>
-          </div>
-        )}
-    </div>
+      <Header />
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route
           path="/cardProject"
           element={
@@ -100,17 +123,16 @@ function App() {
               setFormData={setFormData}
               formData={formData}
               cardLink={cardLink}
+              handleClearForm={handleClearForm}
             />
           }
         />
-        <Route 
-         path="/listProject"
-         element={
-          <ListProject formData={formData}/>
-         }
+        <Route
+          path="/listProject"
+          element={<ListProject formData={formData} />}
         />
       </Routes>
-      
+      <Footer />
     </>
   );
 }

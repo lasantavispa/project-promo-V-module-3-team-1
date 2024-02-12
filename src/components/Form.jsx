@@ -8,7 +8,9 @@ function Form({
   setFormData,
   formData,
   handleClickCreateCard,
-  hidden
+  hidden,
+  cardLink,
+  handleClearForm
 }) {
 
   return (
@@ -89,6 +91,7 @@ function Form({
         </section>
 
         <input
+          value={formData.autor}
           onChange={handleInput}
           className="project__input"
           type="text"
@@ -98,6 +101,7 @@ function Form({
           maxLength="30"
         />
         <input
+          value={formData.job}
           onChange={handleInput}
           className="project__input"
           type="text"
@@ -129,12 +133,19 @@ function Form({
           className="buttonImgCrear__large"
           onClick={handleClickCreateCard}
           {...hidden}
-        >
-          Crear Tarjeta
+        >Crear Tarjeta
+        </button>
+      </section>
+      <Card cardLink={cardLink} hidden={hidden}/>
+
+      <section className="buttonImgCrear">
+        <button
+          className="buttonImgCrear__large"
+          onClick={handleClearForm}
+        >Limpiar Formulario
         </button>
       </section>
 
-      <Card />
     </section>
   );
 }
@@ -144,6 +155,8 @@ Form.propTypes = {
   formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
-  hidden: PropTypes.string.isRequired
+  hidden: PropTypes.string.isRequired,
+  cardLink : PropTypes.string.isRequired,
+  handleClearForm: PropTypes.func.isRequired,
 };
 export default Form;
