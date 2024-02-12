@@ -1,5 +1,17 @@
 @import "../core/Variables.scss";
 @import "../core/Mixins.scss";
+.twoButtons{
+  background-color: $dark;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.conta{
+  background-color: $dark;
+  text-align: center;
+}
 @import "./Form.scss";
 
 .header {
@@ -33,6 +45,7 @@
 }
 
 .hero {
+  background-color: $dark;
   color: $white;
   @include displayForm;
   align-items: center;
@@ -58,6 +71,19 @@
     background-color: $darkLilac;
     border: none;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  &__btn a{
+    text-transform: uppercase;
+    font-family: $heroBtn;
+    font-size: 10px;
+    font-weight: bold;
+    color: $white;
+    text-decoration: none;
+
   }
   @media (min-width: 768px) {
     &__title {
