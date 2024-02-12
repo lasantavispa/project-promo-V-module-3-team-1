@@ -8,7 +8,9 @@ function Form({
   setFormData,
   formData,
   handleClickCreateCard,
-  hidden
+  hidden,
+  cardLink,
+  handleClearForm
 }) {
 
   return (
@@ -28,6 +30,7 @@ function Form({
           placeholder="Nombre del proyecto"
           name="name"
           id="nameId"
+          maxLength="30"
         />
         <input
           value={formData.slogan}
@@ -37,6 +40,7 @@ function Form({
           name="slogan"
           id="sloganId"
           placeholder="Slogan"
+          maxLength="30"
         />
         <input
           value={formData.repo}
@@ -64,6 +68,7 @@ function Form({
           placeholder="Tecnologías"
           name="technologies"
           id="techId"
+          maxLength="30"
         />
         <textarea
           value={formData.desc}
@@ -73,6 +78,7 @@ function Form({
           placeholder="Descripción"
           name="desc"
           id="descId"
+          maxLength="150"
         ></textarea>
       </fieldset>
 
@@ -83,20 +89,24 @@ function Form({
         </section>
 
         <input
+          value={formData.autor}
           onChange={handleInput}
           className="project__input"
           type="text"
           placeholder="Nombre"
           name="autor"
           id="authorId"
+          maxLength="30"
         />
         <input
+          value={formData.job}
           onChange={handleInput}
           className="project__input"
           type="text"
           placeholder="Trabajo"
           name="job"
           id="jobId"
+          maxLength="30"
         />
       </fieldset>
 
@@ -104,14 +114,14 @@ function Form({
         <GetAvatar  
           setFormData = {setFormData}
           text ="Subir foto de proyecto"
-          name = "image"
+          name = "photo"
           formData={formData}
           
         />
         <GetAvatar     
           setFormData = {setFormData}
           text = "Subir foto de autora"
-          name = "photo"  
+          name = "image"  
           formData={formData}   
         />
       </section>
@@ -121,12 +131,19 @@ function Form({
           className="buttonImgCrear__large"
           onClick={handleClickCreateCard}
           {...hidden}
-        >
-          Crear Tarjeta
+        >Crear Tarjeta
+        </button>
+      </section>
+      <Card cardLink={cardLink} hidden={hidden}/>
+
+      <section className="buttonImgCrear">
+        <button
+          className="buttonImgCrear__large"
+          onClick={handleClearForm}
+        >Limpiar Formulario
         </button>
       </section>
 
-      <Card />
     </section>
   );
 }
@@ -136,6 +153,7 @@ Form.propTypes = {
   formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
-  hidden: PropTypes.string.isRequired
+  hidden: PropTypes.string.isRequired,
+  cardLink : PropTypes.string.isRequired
 };
 export default Form;
