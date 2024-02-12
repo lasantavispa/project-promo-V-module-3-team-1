@@ -1,15 +1,16 @@
-import GetAvatar from "./GetAvatar.jsx";
-import "../../scss/layout/Form.scss";
-import Card from "./Card.jsx";
-import PropTypes from "prop-types";
+import GetAvatar from './GetAvatar.jsx';
+import '../scss/layout/Form.scss';
+import Card from './Card.jsx';
+import PropTypes from 'prop-types';
 
 function Form({
   handleInput,
   setFormData,
   formData,
   handleClickCreateCard,
-  hidden,
+  hidden
 }) {
+
   return (
     <section className="form">
       <h2 className="form__h2">Información</h2>
@@ -100,17 +101,18 @@ function Form({
       </fieldset>
 
       <section className="buttonImg">
-        <GetAvatar
-          setFormData={setFormData}
-          text="Subir foto de proyecto"
-          name="image"
+        <GetAvatar  
+          setFormData = {setFormData}
+          text ="Subir foto de proyecto"
+          name = "image"
           formData={formData}
+          
         />
-        <GetAvatar
-          setFormData={setFormData}
-          text="Subir foto de autora"
-          name="photo"
-          formData={formData}
+        <GetAvatar     
+          setFormData = {setFormData}
+          text = "Subir foto de autora"
+          name = "photo"  
+          formData={formData}   
         />
       </section>
 
@@ -131,9 +133,9 @@ function Form({
 
 Form.propTypes = {
   setFormData: PropTypes.func.isRequired,
-  formData: PropTypes.object.isRequired,
+  formData: PropTypes.object.isRequired, 
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
-  hidden: PropTypes.string.isRequired,
+  hidden: PropTypes.string.isRequired
 };
 export default Form;

@@ -8,7 +8,7 @@ const get = (key, defaultValue) => {
     if (localStorageData === null) {
       return defaultValue;
     } else {
-      return JSON.stringify(localStorageData);
+      return JSON.parse(localStorageData);
     }
   };
   
