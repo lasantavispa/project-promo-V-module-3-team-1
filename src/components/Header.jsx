@@ -20,7 +20,4 @@ function Header({ hero }) {
     </header>
   );
 }
-Header.propTypes = {
-  hero: PropTypes.element.isRequired,
-};
 export default Header;
