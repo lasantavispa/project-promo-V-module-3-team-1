@@ -13,6 +13,8 @@ function CardProject({
   cardLink,
   handleInput,
   handleClearForm,
+  setImageSize,
+  imageSize
 }) {
   return (
     <div>
@@ -25,6 +27,8 @@ function CardProject({
         formData={formData}
         cardLink={cardLink}
         handleClearForm={handleClearForm}
+        setImageSize={setImageSize}
+        imageSize={imageSize}
       />
     </div>
   );
@@ -38,5 +42,7 @@ CardProject.propTypes = {
   hidden: PropTypes.string.isRequired,
   cardLink: PropTypes.string,
   handleClearForm: PropTypes.func.isRequired,
+  setImageSize: PropTypes.func.isRequired,
+  imageSize: PropTypes.string.isRequired,
 };
 export default CardProject;

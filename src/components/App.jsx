@@ -25,6 +25,8 @@ function App() {
   const [formData, setFormData] = useState({});
   const [cardLink, setCardLink] = useState('');
   const [hidden, setHidden] = useState('hidden');
+  const [imageSize, setImageSize] = useState('fileSizeOk');
+  // let imageSize = 'fileSizeOk';
 
   const [userData, setUserData] = useState(
     localStorage.get('user') || {
@@ -99,6 +101,7 @@ function App() {
     });
     setHidden('hidden');
     setCardLink('');
+    setImageSize('fileSizeOk');
   };
 
   return (
@@ -117,6 +120,8 @@ function App() {
               formData={formData}
               cardLink={cardLink}
               handleClearForm={handleClearForm}
+              setImageSize={setImageSize}
+              imageSize={imageSize}
             />
           }
         />

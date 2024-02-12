@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../scss/layout/Form.scss';
+import '../scss/core/Mixins.scss';
 
-function GetAvatar({ setFormData, text , name, formData }) {
+function GetAvatar({ setFormData, text, name, formData, setImageSize }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -25,7 +27,6 @@ function GetAvatar({ setFormData, text , name, formData }) {
     console.log(
       'El primero de los ficheros elegidos es',
       ev.currentTarget.files[0]
-      
     );
 
     // compruebo si la usuaria ha elegido al menos un fichero
@@ -33,9 +34,11 @@ function GetAvatar({ setFormData, text , name, formData }) {
       // guardo el primer fichero en myFile
       const myFile = ev.currentTarget.files[0];
       // Verificar el tamaño del archivo antes de cargarlo
-      if (myFile.size > 50 * 1024) { // 50 KB en bytes
-        alert('La imagen seleccionada excede el tamaño máximo permitido de 50 KB.');
+      if (myFile.size > 50 * 1024) {
+        // 50 KB en bytes
+        // alert('La imagen seleccionada excede el tamaño máximo permitido de 50 KB.');
         ev.currentTarget.value = null; // Limpiar el valor del input de archivo
+        setImageSize('alert');
         return; // Salir de la función sin cargar la imagen
       }
       // añado un evento load al manejador de ficheros
@@ -47,7 +50,7 @@ function GetAvatar({ setFormData, text , name, formData }) {
     }
     // si la usuaria no ha elegido ningún fichero y ha puslado en cerrar la ventana de nuestro ordenador, no hago nada
   };
-  
+
   const getImage = () => {
     // cuando el navegador termina de manejar el fichero se ejecuta este método porque lo hemos indicado en  fr.addEventListener('load',  getImage);
 
@@ -56,24 +59,22 @@ function GetAvatar({ setFormData, text , name, formData }) {
 
     //  fr.result contiene los datos del fichero en un formato que se llama base64 que nos vale por que podemos usarlo para pintar una imagen en HTML
     const image = fr.result;
-  
 
     // aquí hago lifting con los datos del fichero
     // lo que haga el componente madre con esta información es otro problema diferente
-    setFormData({...formData, [name]: image})
-  
+    setFormData({ ...formData, [name]: image });
   };
 
   return (
-    <div className="buttonImgCrear__large">
-      <label >
+    <div className='buttonImgCrear__large'>
+      <label>
         {text}
         <input
-          type = "file"
-          ref = {myFileField}
-          style = {{ display: 'none' }}
-          onChange = {uploadImage}
-          name = {name}
+          type='file'
+          ref={myFileField}
+          style={{ display: 'none' }}
+          onChange={uploadImage}
+          name={name}
         />
       </label>
     </div>
@@ -85,6 +86,7 @@ GetAvatar.propTypes = {
   text: PropTypes.string,
   name: PropTypes.string,
   formData: PropTypes.object.isRequired,
+  setImageSize: PropTypes.func.isRequired,
 };
 
 export default GetAvatar;

@@ -9,6 +9,7 @@
   border: solid 1px rgba(0, 0, 0, 0);
   background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
   border-radius: 10px;
+  padding-bottom: 10px;
 
   &__h2 {
     color: $white;
@@ -44,6 +45,7 @@
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 10px;
+  padding-bottom: 10px;
 }
 .project {
   @include displayForm;
@@ -60,9 +62,6 @@
     height: 42.72px;
     color: $white;
     padding-left: 15px;
-    // ::placeholder {
-    //   color: $white;
-    // }
   }
 
   &__textarea {
@@ -95,7 +94,6 @@
   @include buttonStyles;
   &__large {
     @include commonButton;
-    // width: 200px;
     border: solid 2px $white;
     display: flex;
     align-items: center;
@@ -122,4 +120,12 @@
     padding: 10px;
     width: 70%;
   }
+}
+.alert{
+  color: red;
+  padding: 0 50px;
+  text-align: center;
+}
+.fileSizeOk{
+  display: none;
 }

@@ -8,7 +8,7 @@ import '../scss/layout/Header.scss';
 function ButtonSeeProjects() {
   return (
     <Link to="/listProject">
-      <button className="buttonImgCrear__large">Mira tus tarjetas</button>
+      <button className='buttonImgCrear__large'>Mira tus tarjetas</button>
     </Link>
     
   )
