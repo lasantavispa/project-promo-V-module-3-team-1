@@ -1,13 +1,11 @@
-@import "../core/Variables.scss";
-@import "../core/Mixins.scss";
+@import '../core/Variables.scss';
+@import '../core/Mixins.scss';
 
 .form {
   @include displayForm;
   width: 100%;
   gap: 20px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
-  background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
   border-radius: 10px;
   padding-bottom: 10px;
 
@@ -29,7 +27,6 @@
     padding-bottom: 10px;
   }
   &__line {
-    width: 100%;
     border: 0;
     height: 1px;
     background-image: linear-gradient(
@@ -42,19 +39,15 @@
 }
 
 .project {
+  @include displayForm;
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 10px;
   padding-bottom: 10px;
-}
-.project {
-  @include displayForm;
   gap: 10px;
-  border: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
-  background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
-
+  padding: 10px;
   &__input {
     background-color: $dark;
     border: solid 2px $white;
@@ -63,7 +56,6 @@
     color: $white;
     padding-left: 15px;
   }
-
   &__textarea {
     background-color: $dark;
     border-color: $white;
@@ -73,21 +65,20 @@
     padding-left: 15px;
     padding-top: 10px;
     height: 110px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    border: solid 1px rgba(0, 0, 0, 0);
-    background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
     border: solid 2px $white;
-    // ::placeholder {
-    //   color: $white;
-    // }
   }
 }
 
 .buttonImg {
+  cursor: pointer;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   gap: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  @media (min-width: 768px){
+    flex-direction: row;
+  }
 }
 
 .buttonImgCrear {
@@ -96,8 +87,10 @@
     @include commonButton;
     border: solid 2px $white;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 }
 
@@ -121,11 +114,11 @@
     width: 70%;
   }
 }
-.alert{
+.alert {
   color: red;
   padding: 0 50px;
   text-align: center;
 }
-.fileSizeOk{
+.fileSizeOk {
   display: none;
 }

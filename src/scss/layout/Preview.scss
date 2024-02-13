@@ -29,7 +29,6 @@
     background-color: $white;
     color: #3e3e3e;
     border-radius: 20px;
-    // position: sticky;
     z-index: 1;
     transform: translateY(-40px);
   }
@@ -44,6 +43,17 @@
   &__subtitle {
     font-size: 8px;
     text-align: center;
+  }
+  &__line{
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   &__desc {
@@ -142,23 +152,4 @@
     }
   }
 }
-
-
-// .btn-color {
-//   border-radius: 20px;
-//   width: 85px;
-//   height: 30px;
-//   font-weight: bold;
-// }
-
-// .btn-color-dark {
-//   background-color: $black;
-//   color: $white;
-// }
-
-// .card {
-//   color: $white;
-//   text-align: center;
-//   padding: 20px;
-// }
 
