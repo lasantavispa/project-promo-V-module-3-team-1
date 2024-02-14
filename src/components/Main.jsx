@@ -5,11 +5,13 @@ import Form from './Form.jsx';
 import ButtonSeeProjects from './ButtonSeeProjects.jsx';
 import PropTypes from 'prop-types';
 
-function Main({ handleInput, setFormData, formData, handleClickCreateCard, hidden, cardLink, handleClearForm }) {
+function Main({ handleInput, setFormData, formData, handleClickCreateCard, hidden, cardLink, handleClearForm, setImageSize, imageSize }) {
   return (
     <main className="main">
-      <ButtonSeeProjects />
-      <Preview formData={formData} />
+      <div className='main__preview'>
+        <ButtonSeeProjects/>
+        <Preview formData={formData} />
+      </div>
       <Form 
       handleInput={handleInput} 
       formData={formData} 
@@ -17,7 +19,9 @@ function Main({ handleInput, setFormData, formData, handleClickCreateCard, hidde
       handleClickCreateCard={handleClickCreateCard} 
       hidden={hidden}
       cardLink={cardLink}
-      handleClearForm={handleClearForm}/>
+      handleClearForm={handleClearForm}
+      setImageSize={setImageSize}
+      imageSize={imageSize}/>
     </main>
 
   );
@@ -30,6 +34,8 @@ function Main({ handleInput, setFormData, formData, handleClickCreateCard, hidde
     hidden: PropTypes.string.isRequired,
     cardLink : PropTypes.string,
     handleClearForm: PropTypes.func.isRequired,
+    setImageSize: PropTypes.func.isRequired,
+    imageSize: PropTypes.string.isRequired,
 }
 
 export default Main;
