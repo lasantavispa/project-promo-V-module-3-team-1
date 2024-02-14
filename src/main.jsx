@@ -1,11 +1,14 @@
-// import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App.jsx";
+// Fichero src/index.jsx (código nuevo)
 
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+import { HashRouter } from "react-router-dom";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <HashRouter>
     <App />
-  </BrowserRouter>
+  </HashRouter>
 );

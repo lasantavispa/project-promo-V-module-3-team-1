@@ -19,6 +19,7 @@ function Card({ cardLink, hidden}) {
 }
 
 Card.propTypes = {
-  cardLink : PropTypes.string.isRequired
+  cardLink : PropTypes.string,
+  hidden: PropTypes.string.isRequired,
 };
 export default Card;
