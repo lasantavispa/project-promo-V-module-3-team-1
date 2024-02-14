@@ -3,50 +3,45 @@ import user from '../images/user.jpeg';
 import PropTypes from 'prop-types';
 import '../scss/layout/Preview.scss';
 
-function Preview({ formData, avatar, userPhoto }) {
-  // si avatar == '' me devuelves cover si no me devuelves avatar
-  console.log('Avatar in Preview:', avatar);
+function Preview({ formData }) {
   return (
     <section className='preview'>
-      <img className='preview__image' src={avatar || cover} alt='' />
+      <img className='preview__image' src={formData.photo || cover} alt='' />
 
       <section className='preview__author'>
         <section className='projectCard'>
           <p className='projectCard__subtitle'>Personal Project Card</p>
           <hr className='projectCard__line' />
 
-          <h2 className='projectCard__title'> {formData.project || 'Elegant Workspace'} </h2>
+          <h2 className='projectCard__title'> {formData.name || 'Elegant Workspace'} </h2>
           <p className='projectCard__slogan'> {formData.slogan || 'Diseños Exclusivos'} </p>
           <p className='projectCard__desc'>
             {formData.desc ||
               'Lorem, ipcorrupti ipsum!'}
           </p>
           <section className='projectCard__technologies'>
-            <p className='projectCard__text'> {formData.tech || 'React JS - HTML -  CSS'}</p>
+            <p className='projectCard__text'> {formData.technologies || 'React JS - HTML -  CSS'}</p>
           </section>
           <section className='projectCard__icons'>
-            <a href={formData.repo} target='_blank'>
-              {' '}
+            <a href={formData.repo} target='_blank'  rel="noreferrer">
               <i className='fa-brands fa-github'></i>
             </a>
-            <a href={formData.demo} target='_blank'> 
+            <a href={formData.demo} target='_blank'  rel="noreferrer"> 
               <i className='fa-solid fa-globe'></i>
             </a>
           </section>
         </section>
 
         <section className='author'>
-          <img className='author__image' src={userPhoto || user} alt='' />
+          <img className='author__image' src={formData.image || user} alt='' />
           <p className='author__job'> {formData.job || 'Full Stack Developer'} </p>
-          <p className='author__name'> {formData.author || 'Emmelie Björklund'} </p>
+          <p className='author__name'> {formData.autor || 'Emmelie Björklund'} </p>
         </section>
       </section>
     </section>
   );
 }
 Preview.propTypes = {
-  formData: PropTypes.object.isRequired, // Ajusta el tipo según tus necesidades
-  avatar: PropTypes.string.isRequired, // Asegúrate de ajustar el tipo según tus necesidades
-  userPhoto: PropTypes.string.isRequired,
+  formData: PropTypes.object.isRequired, 
 };
 export default Preview;

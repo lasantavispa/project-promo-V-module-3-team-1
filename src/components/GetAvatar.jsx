@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../images/cover.jpeg';
-import '../scss/layout/GetAvatar.scss';
+import '../scss/layout/Form.scss';
+import '../scss/core/Mixins.scss';
 
-function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
+function GetAvatar({ setFormData, text, name, formData, setImageSize }) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -33,7 +33,16 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
     if (ev.currentTarget.files.length > 0) {
       // guardo el primer fichero en myFile
       const myFile = ev.currentTarget.files[0];
-
+      // Verificar el tamaño del archivo antes de cargarlo
+      if (myFile.size > 50 * 1024) {
+        // 50 KB en bytes
+        // alert('La imagen seleccionada excede el tamaño máximo permitido de 50 KB.');
+        ev.currentTarget.value = null; // Limpiar el valor del input de archivo
+        setImageSize('alert');
+        return; // Salir de la función sin cargar la imagen
+      } else{
+        setImageSize('fileSizeOk');
+      }
       // añado un evento load al manejador de ficheros
       // por qué añado un evento, pues porque esto es una acción asíncrona, imaginemos que el fichero pesa 5 Gb, el navegador puede tardar unos cuantos segundos en cargar y procesar el fichero, por eso le decimos "navegador, cuando termines de cargar el fichero me ejecutas el método  image"
       fr.addEventListener('load', getImage);
@@ -55,33 +64,31 @@ function GetAvatar({avatar=defaultAvatar, updateAvatar, text}) {
 
     // aquí hago lifting con los datos del fichero
     // lo que haga el componente madre con esta información es otro problema diferente
-    updateAvatar(image);
+    setFormData({ ...formData, [name]: image });
   };
 
   return (
-    <div className="buttonImgCrear__large">
-      <label >
+    <div className='buttonImgCrear__large'>
+      <label>
         {text}
         <input
-          type="file"
+          type='file'
           ref={myFileField}
           style={{ display: 'none' }}
           onChange={uploadImage}
+          name={name}
         />
       </label>
-
-      {/* <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div> */}
     </div>
   );
 }
 
 GetAvatar.propTypes = {
-  avatar: PropTypes.string,
-  updateAvatar: PropTypes.func.isRequired,
-  text: PropTypes.string
+  setFormData: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  name: PropTypes.string,
+  formData: PropTypes.object.isRequired,
+  setImageSize: PropTypes.func.isRequired,
 };
 
 export default GetAvatar;

@@ -1,92 +1,137 @@
+// css
 import '../scss/App.scss';
+//img
 import cover2 from '../images/cover_2.jpeg';
 import favicon from '../images/favicon.png';
 import logoAlab from '../images/logo-adalab.png';
+//API y LS
+import callToApi from '../services/Api.js';
+import localStorage from '../services/LocalStorage.js';
+//react
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+//Componentes
 import Header from './Header.jsx';
-import Main from './Main.jsx';
+import LandingPage from './landingPage/LandingPage.jsx';
+import CardProject from './cardProject/CardProject.jsx';
+import ListProject from './listProject/ListProject.jsx';
 import Footer from './Footer.jsx';
-import { useState } from 'react';
 
 function App() {
-  const [formData, setFormData] = useState({
-    project: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-    tech: '',
-    desc: '',
-    author: '',
-    job: '',
-  });
+  //Dónde lo usamos?
+  const location = useLocation();
 
-  // const [project, setName] = useState('');
-  // const [slogan, setSlogan] = useState('');
-  // const [repo, setRepo] = useState('');
-  // const [demo, setDemo] = useState('');
-  // const [tech, setTech] = useState('');
-  // const [desc, setDesc] = useState('');
-  // const [author, setAuthor] = useState('');
-  // const [job, setJob] = useState('');
+  //Variables estado
+  const [formData, setFormData] = useState({});
+  const [cardLink, setCardLink] = useState('');
+  const [hidden, setHidden] = useState('hidden');
+  const [imageSize, setImageSize] = useState('fileSizeOk');
+  // let imageSize = 'fileSizeOk';
 
-  const [avatar, setAvatar] = useState('');
-  const updateAvatar = (avatar) => {
-    setAvatar(avatar);
+  const [userData, setUserData] = useState(
+    localStorage.get('user') || {
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    }
+  );
+
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
+    setFormData({
+      ...formData,
+      [inputName]: inputValue,
+    });
+  };
+ 
+  useEffect(() => {
+    if (userData) {
+      setFormData(userData);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.set('user', {
+      name: formData.name,
+      slogan: formData.slogan,
+      technologies: formData.technologies,
+      demo: formData.demo,
+      repo: formData.repo,
+      desc: formData.desc,
+      autor: formData.autor,
+      job: formData.job,
+      image: formData.image,
+      photo: formData.photo,
+    });
+    console.log('han cambiado los datos introducidos');
+    setUserData(localStorage.get('user'));
+  }, [formData]);
+
+  const handleClickCreateCard = (ev) => {
+    ev.preventDefault;
+    setHidden('');
+    callToApi(formData).then((response) => {
+      setCardLink(response.cardURL);
+      console.log(response.cardURL);
+    });
   };
 
-  const [userPhoto, setUserPhoto] = useState('');
-  const updatePhoto = (userPhoto) => {
-    setUserPhoto(userPhoto);
-  }
-
-  const handleInput = (event) => {
-    if (event.target.id === 'nameId') {
-      formData.project = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'sloganId') {
-      formData.slogan = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'repoId') {
-      formData.repo = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'demoId') {
-      formData.demo = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'techId') {
-      formData.tech = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'descId') {
-      formData.desc = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'authorId') {
-      formData.author = event.target.value;
-      setFormData({ ...formData });
-    } else if (event.target.id === 'jobId') {
-      formData.job = event.target.value;
-      setFormData({ ...formData });
-    }
+  const handleClearForm = (ev) => {
+    ev.preventDefault;
+    localStorage.remove('user');
+    setFormData({
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    });
+    setHidden('hidden');
+    setCardLink('');
+    setImageSize('fileSizeOk');
   };
 
   return (
-    <div className="container">
+    <>
       <Header />
-      <Main
-        handleInput={handleInput}
-        avatar={avatar}
-        updateAvatar={updateAvatar}
-        formData={formData}
-        userPhoto={userPhoto}
-        updatePhoto={updatePhoto}
-        // project={project}
-        // slogan={slogan}
-        // repo={repo}
-        // demo={demo}
-        // tech={tech}
-        // desc={desc}
-        // author={author}
-        // job={job}
-      />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/cardProject"
+          element={
+            <CardProject
+              hidden={hidden}
+              handleClickCreateCard={handleClickCreateCard}
+              handleInput={handleInput}
+              setFormData={setFormData}
+              formData={formData}
+              cardLink={cardLink}
+              handleClearForm={handleClearForm}
+              setImageSize={setImageSize}
+              imageSize={imageSize}
+            />
+          }
+        />
+        <Route
+          path="/listProject"
+          element={<ListProject formData={formData} />}
+        />
+      </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
