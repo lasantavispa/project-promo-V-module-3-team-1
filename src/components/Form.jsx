@@ -50,6 +50,7 @@ function Form({
           name="repo"
           id="repoId"
           placeholder="Repo"
+          maxLength="30"
         />
         <input
           value={formData.demo}
@@ -59,6 +60,7 @@ function Form({
           placeholder="Demo"
           name="demo"
           id="demoId"
+          maxLength="30"
         />
         <input
           value={formData.technologies}
@@ -154,6 +156,7 @@ Form.propTypes = {
   handleInput: PropTypes.func.isRequired,
   handleClickCreateCard: PropTypes.func.isRequired,
   hidden: PropTypes.string.isRequired,
-  cardLink : PropTypes.string.isRequired
+  cardLink : PropTypes.string.isRequired,
+  handleClearForm: PropTypes.func.isRequired,
 };
 export default Form;
